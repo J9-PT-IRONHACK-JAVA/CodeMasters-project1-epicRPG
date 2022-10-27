@@ -10,6 +10,7 @@ public class CharacterCreator {
 //        while (command.equals("exit") == false){
 //            System.out.println();
 //        }
+
         int character = 0;
         int characters;
         var scan = new Scanner(System.in);
