@@ -39,7 +39,9 @@ public class Menu {
                 case 1: {
                     clearScreen();
                     var creator = new CharacterCreator();
-                    creator.menu();
+                    creator.menu(scanner);
+                    System.out.println("Press ENTER to continue...");
+                    System.in.read();
                     break;
                 }
                 case 2: {
