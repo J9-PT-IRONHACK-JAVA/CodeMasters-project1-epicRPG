@@ -11,7 +11,7 @@ public class CharacterCreator {
 //            System.out.println();
 //        }
 
-        int character = 0;
+        int character;
         int characters;
         var scan = new Scanner(System.in);
         var team1 = new ArrayList<Character>();
@@ -21,16 +21,17 @@ public class CharacterCreator {
         characters = scan.nextInt();
         for (int i = 0; i < characters; i++) {
             System.out.println("\nCharacter " + i + ".\n 1. Warrior or 2. Wizard?");
+            character = 0;
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
                 if (character != 1 && character != 2){
                     System.out.println("Bad input!");
                 }
-            }
-            if (character == 1) {
-                team1.add(new Warrior(i, "ivan", 50, 100, 50));
-            } else {
-                team1.add(new Wizard(i, "salva", 50, 100, 50));
+                if (character == 1) {
+                    team1.add(new Warrior(i, "ivan", 50, 100, 50));
+                } else {
+                    team1.add(new Wizard(i, "salva", 50, 100, 50));
+                }
             }
         }
 
