@@ -18,10 +18,24 @@ public class Menu {
             System.out.println("3) Import CSV.");
             System.out.println("4) Figth!.");
             System.out.println("5) Exit.");
+            int option;
 
-            int option = scanner.nextInt();
+            try{
+                option = Integer.parseInt(scanner.nextLine());
+            }
+            catch (Exception e){
+                option = 0;
+            }
 
             switch (option) {
+                case 0: {
+                    clearScreen();
+                    System.out.println("Error!! Only NUMBERS please...");
+                    System.out.println("Press ENTER to continue...");
+                    System.out.println("*********************************");
+                    System.in.read();
+                    break;
+                }
                 case 1: {
                     clearScreen();
                     var creator = new CharacterCreator();
@@ -60,12 +74,14 @@ public class Menu {
                 case 5: {
                     clearScreen();
                     System.out.println("Thanks por play!");
+                    System.out.println("--==EPIC RPG==--");
                     run = false; //Close the loop from run (the while loop)
                     scanner.close();
                     break;
 
                 }
                 default: {
+                    clearScreen();
                     System.out.println("Option Error! Select a correct option...");
                     System.out.println("Press ENTER to continue...");
                     System.out.println("*********************************");
