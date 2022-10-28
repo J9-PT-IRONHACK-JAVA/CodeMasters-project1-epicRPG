@@ -44,9 +44,11 @@ public class Menu {
                 }
                 case 2: {
                     clearScreen();
-                    System.out.println("Random characters - Implementar aqui ....");
-                    System.out.println("Press ENTER to continue...");
-
+                    var creator = new CharacterCreator();
+                    System.out.println("Number of characteres??");
+                    int q=scanner.nextInt();
+                    creator.randomCreate(q);
+                    System.out.println("Press DOUBLE ENTER to continue...");
                     System.in.read();
                     break;
 

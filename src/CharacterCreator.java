@@ -1,7 +1,10 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class CharacterCreator {
+    ArrayList<Character> team1 = new ArrayList<Character>();
+    ArrayList<Character> team2 = new ArrayList<Character>();
 
     public static void menu(){
 
@@ -34,13 +37,63 @@ public class CharacterCreator {
             }
         }
 
-
-
-
-
         for (int i = 0; i < characters; i++) {
             team2.add(new Wizard(i, "salva", 50, 100, 50));
         }
     }
 
+    public void randomCreate(int q){
+        Random r = new Random();
+        for (int i = 0; i < q; i++) {
+            var addCharacter1 = r.nextBoolean();
+            if (addCharacter1==true) {
+                team1.add(new Warrior(
+                        i+1,
+                        "Warrior " + i+1,
+                        r.nextInt(50 - 1) + 1,
+                        r.nextInt(100 - 1) + 1,
+                        r.nextInt(50 - 1) + 1
+                ));
+            }else {
+
+                team1.add(new Wizard(
+                        i+1,
+                        "Wizard  " + i+1,
+                        r.nextInt(50 - 1) + 1,
+                        r.nextInt(100 - 1) + 1,
+                        r.nextInt(50 - 1) + 1
+                ));
+            }
+            var addCharacter2 = r.nextBoolean();
+            if (addCharacter2==true) {
+                team2.add(new Warrior(
+                        i+1,
+                        "Warrior " + i+1,
+                        r.nextInt(50 - 1) + 1,
+                        r.nextInt(100 - 1) + 1,
+                        r.nextInt(50 - 1) + 1
+                ));
+            }else {
+
+                team2.add(new Wizard(
+                        i+1,
+                        "Wizard  " + i+1,
+                        r.nextInt(50 - 1) + 1,
+                        r.nextInt(100 - 1) + 1,
+                        r.nextInt(50 - 1) + 1
+                ));
+            }
+        }
+        // print the random warriors:
+        System.out.println("Team 1:");
+        for (int i = 0; i < q; i++) {
+            System.out.println(team1.get(i));
+        }
+        System.out.println("Team 2:");
+        for (int i = 0; i < q; i++) {
+            System.out.println(team2.get(i));
+        }
+
+
+    }
 }
