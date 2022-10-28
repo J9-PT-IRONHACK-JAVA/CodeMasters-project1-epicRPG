@@ -49,7 +49,7 @@ public class CharacterCreator {
             if (addCharacter1==true) {
                 team1.add(new Warrior(
                         i+1,
-                        "Warrior " + i+1,
+                        "Warrior " + (i+1),
                         r.nextInt(50 - 1) + 1,
                         r.nextInt(100 - 1) + 1,
                         r.nextInt(50 - 1) + 1
@@ -58,7 +58,7 @@ public class CharacterCreator {
 
                 team1.add(new Wizard(
                         i+1,
-                        "Wizard  " + i+1,
+                        "Wizard " + (i+1),
                         r.nextInt(50 - 1) + 1,
                         r.nextInt(100 - 1) + 1,
                         r.nextInt(50 - 1) + 1
@@ -68,7 +68,7 @@ public class CharacterCreator {
             if (addCharacter2==true) {
                 team2.add(new Warrior(
                         i+1,
-                        "Warrior " + i+1,
+                        "Warrior " + (i+1),
                         r.nextInt(50 - 1) + 1,
                         r.nextInt(100 - 1) + 1,
                         r.nextInt(50 - 1) + 1
@@ -77,7 +77,7 @@ public class CharacterCreator {
 
                 team2.add(new Wizard(
                         i+1,
-                        "Wizard  " + i+1,
+                        "Wizard  " + (i+1),
                         r.nextInt(50 - 1) + 1,
                         r.nextInt(100 - 1) + 1,
                         r.nextInt(50 - 1) + 1
@@ -93,6 +93,7 @@ public class CharacterCreator {
         for (int i = 0; i < q; i++) {
             System.out.println(team2.get(i));
         }
+
 
 
     }
