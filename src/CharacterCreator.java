@@ -8,7 +8,7 @@ public class CharacterCreator {
 
     public static void menu(){
 
-        int character;
+        int character = 0;
         int characters;
 
         var scan = new Scanner(System.in);
