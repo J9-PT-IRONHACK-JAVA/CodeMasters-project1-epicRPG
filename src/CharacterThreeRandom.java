@@ -26,11 +26,13 @@ public class CharacterThreeRandom {
                 if (character != 1 && character != 2){
                     System.out.println("Bad input! Write 1 or 2 and press intro.");
                 }
-            }
-            if (character == 1) {
-                threeRandomWarriors(scan, team1, i);
-            } else {
-                threeRandomWizards(scan, team1, i);
+                if (character == 1) {
+                    threeRandomWarriors(scan, team1, i);
+                    break;
+                } else if (character == 2){
+                    threeRandomWizards(scan, team1, i);
+                    break;
+                }
             }
         }
         System.out.println("\n\nTIME TO SET THE TEAM 2:");
@@ -43,11 +45,13 @@ public class CharacterThreeRandom {
                 if (character != 1 && character != 2){
                     System.out.println("Bad input! Write 1 or 2 and press intro.");
                 }
-            }
-            if (character == 1) {
-                threeRandomWarriors(scan, team2, i);
-            } else {
-                threeRandomWizards(scan, team2, i);
+                if (character == 1) {
+                    threeRandomWarriors(scan, team2, i);
+                    break;
+                } else if (character == 2){
+                    threeRandomWizards(scan, team2, i);
+                    break;
+                }
             }
         }
     }
@@ -83,13 +87,16 @@ public class CharacterThreeRandom {
             if (!selected.equals(name1) && !selected.equals(name2) && !selected.equals(name3)){
                 System.out.println("Wrong name!");
             }
-        }
-        if (selected.equals(name1)){
-            team.add(new Warrior(i, name1, hp1, stamina1, strength1));
-        } else if (selected.equals(name2)){
-            team.add(new Warrior(i, name2, hp2, stamina2, strength2));
-        } else if (selected.equals(name3)) {
-            team.add(new Warrior(i, name3, hp3, stamina3, strength3));
+            if (selected.equals(name1)){
+                team.add(new Warrior(i, name1, hp1, stamina1, strength1));
+                break;
+            } else if (selected.equals(name2)){
+                team.add(new Warrior(i, name2, hp2, stamina2, strength2));
+                break;
+            } else if (selected.equals(name3)) {
+                team.add(new Warrior(i, name3, hp3, stamina3, strength3));
+                break;
+            }
         }
     }
 
@@ -124,13 +131,16 @@ public class CharacterThreeRandom {
             if (!selected.equals(name1) && !selected.equals(name2) && !selected.equals(name3)){
                 System.out.println("Wrong name!");
             }
-        }
-        if (selected.equals(name1)){
-            team.add(new Wizard(i, name1, hp1, mana1, intelligence1));
-        } else if (selected.equals(name2)){
-            team.add(new Wizard(i, name2, hp2, mana2, intelligence2));
-        } else if (selected.equals(name3)) {
-            team.add(new Wizard(i, name3, hp3, mana3, intelligence2));
+            if (selected.equals(name1)){
+                team.add(new Wizard(i, name1, hp1, mana1, intelligence1));
+                break;
+            } else if (selected.equals(name2)){
+                team.add(new Wizard(i, name2, hp2, mana2, intelligence2));
+                break;
+            } else if (selected.equals(name3)) {
+                team.add(new Wizard(i, name3, hp3, mana3, intelligence2));
+                break;
+            }
         }
     }
 }
