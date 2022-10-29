@@ -16,4 +16,5 @@ public class Main {
         for (Character este : team1) {
             System.out.println(este.getName());
         }
+    }
 }
