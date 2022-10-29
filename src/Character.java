@@ -5,6 +5,14 @@ public abstract class Character {
     private int hp;
     private boolean isAlive;
 
+    @Override
+    public String toString() {
+        return "Character{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public Character(int id, String name, int hp) {
         setId(id);
         setName(name);
