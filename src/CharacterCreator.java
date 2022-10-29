@@ -26,11 +26,13 @@ public class CharacterCreator {
                 if (character != 1 && character != 2){
                     System.out.println("Bad input! Write 1 or 2 and press intro.");
                 }
-            }
-            if (character == 1) {
-                warriorCreator(scan, team1, i);
-            } else {
-                wizardCreator(scan, team1, i);
+                if (character == 1) {
+                    warriorCreator(scan, team1, i);
+                    break;
+                } else if (character == 2){
+                    wizardCreator(scan, team1, i);
+                    break;
+                }
             }
         }
 
@@ -44,11 +46,13 @@ public class CharacterCreator {
                 if (character != 1 && character != 2){
                     System.out.println("Bad input!");
                 }
-            }
-            if (character == 1) {
-                warriorCreator(scan, team2, i);
-            } else {
-                wizardCreator(scan, team2, i);
+                if (character == 1) {
+                    warriorCreator(scan, team2, i);
+                    break;
+                } else if (character == 2){
+                    wizardCreator(scan, team2, i);
+                    break;
+                }
             }
         }
 
