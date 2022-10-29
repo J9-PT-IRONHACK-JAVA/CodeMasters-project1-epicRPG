@@ -10,8 +10,6 @@ public class CharacterCreator {
         int characters;
 
         var scan = new Scanner(System.in);
-//        var team1 = new ArrayList<Character>();
-//        var team2 = new ArrayList<Character>();
 
         System.out.println("How many characters do you want for each team:");
         characters = scan.nextInt();

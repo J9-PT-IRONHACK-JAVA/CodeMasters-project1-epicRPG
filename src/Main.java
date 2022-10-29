@@ -1,8 +1,11 @@
+
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) throws IOException {
 
         var team1 = new ArrayList<Character>();
@@ -13,5 +16,4 @@ public class Main {
         for (Character este : team1) {
             System.out.println(este.getName());
         }
-    }
 }
