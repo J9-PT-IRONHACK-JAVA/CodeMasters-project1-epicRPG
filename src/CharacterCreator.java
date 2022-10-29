@@ -3,17 +3,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CharacterCreator {
-    ArrayList<Character> team1 = new ArrayList<Character>();
-    ArrayList<Character> team2 = new ArrayList<Character>();
 
-    public static void menu(){
+    public static void menu(ArrayList<Character> team1, ArrayList<Character> team2){
 
         int character = 0;
         int characters;
 
         var scan = new Scanner(System.in);
-        var team1 = new ArrayList<Character>();
-        var team2 = new ArrayList<Character>();
+//        var team1 = new ArrayList<Character>();
+//        var team2 = new ArrayList<Character>();
 
         System.out.println("How many characters do you want for each team:");
         characters = scan.nextInt();
