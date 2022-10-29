@@ -8,7 +8,7 @@ public class CharacterCreator {
 
     public static void menu(){
 
-        int character;
+        int character = 0;
         int characters;
 
         var scan = new Scanner(System.in);
@@ -64,7 +64,7 @@ public class CharacterCreator {
             System.out.println("Adding Character to TEAM Nª 2");
             System.out.println("\nCharacter " + (i + 1) + ".\n 1. Warrior or 2. Wizard?");
             while (character != 1 && character != 2) {
-                character = scanner.nextInt();
+                character = scan.nextInt();
                 if (character != 1 && character != 2) {
                     System.out.println("Bad input!");
                 }
