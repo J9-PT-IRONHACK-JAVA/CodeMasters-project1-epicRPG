@@ -14,9 +14,9 @@ public abstract class Menu {
             System.out.println("Welcome to EPIC RPG!");
             System.out.println("Select option:");
             System.out.println("1) Create manual characters.");
-            System.out.println("2) Create random characters.");
-            System.out.println("3) Import CSV.");
-            System.out.println("4) Figth!.");
+            System.out.println("2) Chose between 3 random characters.");
+            System.out.println("3) Create a random teams.");
+            System.out.println("4) Import CSV.");
             System.out.println("5) Exit.");
             int option;
 
@@ -46,18 +46,18 @@ public abstract class Menu {
                 }
                 case 2: {
                     clearScreen();
-                    System.out.println("Create Random Characters....");
+                    System.out.println("Chose between 3 random generated characters....");
                     System.out.println("Press ENTER to continue...");
-//DRINA
+                    CharacterThreeRandom.menu();
                     System.in.read();
                     break;
 
                 }
                 case 3: {
                     clearScreen();
-                    System.out.println("import CSV - Implementar aqui.....");
+                    System.out.println("Create a random teams.....");
                     System.out.println("Press ENTER to continue...");
-//ANDRES
+//DRINA
                     System.in.read();
 
                     break;
@@ -65,9 +65,9 @@ public abstract class Menu {
                 }
                 case 4: {
                     clearScreen();
-                    System.out.println("Figth!!! - Implementar aqui.....");
+                    System.out.println("Import teams from a 'csv' file.....");
                     System.out.println("Press ENTER to continue...");
-
+//ANDRES
                     System.in.read();
 
                     break;
@@ -95,11 +95,9 @@ public abstract class Menu {
         }
     }
 
-    // Scren cleaner
+    // Screen cleaner
     public static void clearScreen(){
-        for (int i = 0; i < 30; i++) {
-            System.out.println();
-        }
+        System.out.print("\033[H\033[2J");
     }
 
 }
