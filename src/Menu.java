@@ -8,9 +8,9 @@ public abstract class Menu {
 
     public static void run(ArrayList<Character> team1, ArrayList<Character> team2) throws IOException {
 
-        boolean run = true; //when "run" is True, menu is "looping"
+        int option =0;
 
-        while (run){
+        while (option!=5){
             clearScreen();
             System.out.println("Welcome to EPIC RPG!");
             System.out.println("Select option:");
@@ -19,7 +19,6 @@ public abstract class Menu {
             System.out.println("3) Create a random teams.");
             System.out.println("4) Import CSV.");
             System.out.println("5) Exit.");
-            int option;
 
             try{
                 option = Integer.parseInt(scanner.nextLine());
@@ -49,7 +48,7 @@ public abstract class Menu {
                     clearScreen();
                     System.out.println("Chose between 3 random generated characters....");
                     System.out.println("Press ENTER to continue...");
-                    CharacterThreeRandom.menu();
+                    CharacterThreeRandom.menu(team1, team2);
                     System.in.read();
                     break;
 
@@ -70,15 +69,13 @@ public abstract class Menu {
                     Csv.menuCsv(scanner,team2);
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
-
                     break;
 
                 }
                 case 5: {
                     clearScreen();
-                    System.out.println("Thanks por play!");
+                    System.out.println("Thanks for play!");
                     System.out.println("--==EPIC RPG==--");
-                    run = false; //Close the loop from run (the while loop)
                     scanner.close();
                     break;
 
