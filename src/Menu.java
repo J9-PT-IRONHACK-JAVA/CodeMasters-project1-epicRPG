@@ -66,9 +66,9 @@ public abstract class Menu {
                 }
                 case 4: {
                     clearScreen();
-                    System.out.println("Import teams from a 'csv' file.....");
+                    Csv.menuCsv(scanner,team1);
+                    Csv.menuCsv(scanner,team2);
                     System.out.println("Press ENTER to continue...");
-//ANDRES
                     System.in.read();
 
                     break;
