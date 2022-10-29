@@ -16,13 +16,15 @@ public class Csv {
         while (reader.hasNextLine()){
             fileList.add(reader.nextLine());
         }
-
+        System.out.println(fileList.get(1).split(",").getClass().getName());
+        /*
         for (int i = 0; i < fileList.size(); i++) {
             if (i!=0){
                 System.out.println(fileList.get(i));
             }
 
         }
+        System.out.println(fileList.get(1).split(","));
 
         /*
         var char1 = new Warrior(id,name,hp,stamina,stregnth)
