@@ -40,7 +40,7 @@ public abstract class Menu {
                     clearScreen();
                     System.out.println("Create Manual Characters....");
                     System.out.println("Press ENTER to continue...");
-
+                    CharacterCreator.menu();
                     System.in.read();
                     break;
                 }
@@ -48,7 +48,7 @@ public abstract class Menu {
                     clearScreen();
                     System.out.println("Create Random Characters....");
                     System.out.println("Press ENTER to continue...");
-
+//DRINA
                     System.in.read();
                     break;
 
@@ -57,7 +57,7 @@ public abstract class Menu {
                     clearScreen();
                     System.out.println("import CSV - Implementar aqui.....");
                     System.out.println("Press ENTER to continue...");
-
+//ANDRES
                     System.in.read();
 
                     break;
