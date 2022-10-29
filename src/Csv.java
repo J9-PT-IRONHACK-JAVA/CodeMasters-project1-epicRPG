@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class Csv {
 
-    private ArrayList<Character> team = new ArrayList<Character>();
+    private static ArrayList<Character> team = new ArrayList<Character>();
 
-    public void meunCsv(Scanner scanner) throws FileNotFoundException {
+    public static void menuCsv(Scanner scanner) throws FileNotFoundException {
         ArrayList<String> fileList = new ArrayList<>();
         boolean flag = false;
         String filename;
@@ -52,5 +52,6 @@ public class Csv {
         System.out.println("   - retornar la lista?\n");
 
     }
+
 
 }
