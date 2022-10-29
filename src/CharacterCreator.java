@@ -3,6 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CharacterCreator {
+    
     ArrayList<Character> team1 = new ArrayList<Character>();
     ArrayList<Character> team2 = new ArrayList<Character>();
 

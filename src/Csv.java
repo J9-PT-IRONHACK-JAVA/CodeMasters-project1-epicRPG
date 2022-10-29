@@ -5,9 +5,7 @@ import java.util.Scanner;
 
 public class Csv {
 
-    private static ArrayList<Character> team = new ArrayList<Character>();
-
-    public static void menuCsv(Scanner scanner) throws FileNotFoundException {
+    public static void menuCsv(Scanner scanner, ArrayList<Character> team) throws FileNotFoundException {
         ArrayList<String> fileList = new ArrayList<>();
         boolean flag = false;
         String filename;
@@ -38,18 +36,9 @@ public class Csv {
                      }
                     }
                 }
-            System.out.println("CHARACTERES CREADOS CORRECTAMENTE! -- ELIMINAR ESTA LINEA ");
         } catch (Exception e) {
             System.out.println("Error... Verify CSV file Format...");
         }
-
-        System.out.println("Aqui implementar lo siguiente, teniendo en cuenta:");
-        System.out.println("1) SI DA ERROR: ");
-        System.out.println("   - Volver al menu anterior?\n" +
-                           "   - pedir nuevamente el nobmre del archivo csv?\n" +
-                           "   - generar un random?");
-        System.out.println("2) SI NO DA ERROR Y CREA LOS CHARACTER SIN PROBLEMA:");
-        System.out.println("   - retornar la lista?\n");
 
     }
 
