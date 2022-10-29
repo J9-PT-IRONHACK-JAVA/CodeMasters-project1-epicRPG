@@ -6,7 +6,7 @@ public class randomTeam {
     // nº jugadores random entre 2 y 20
 
     int numberOfRandomPlayers = (2 + (int)(Math.random() * ((20-2)+1)));
-    System.out.println("You are going to fight " + numberOfRandomPlayers + "vs. " + numberOfRandomPlayers);
+    System.out.println("You are going to fight "+numberOfRandomPlayers+"vs. "+numberOfRandomPlayers);
 
     // ratio warrior:wizard aleatorio
     int dice = (2+(int)(Math.random()*((2-1)+1)));
@@ -16,7 +16,5 @@ public class randomTeam {
     ArrayList<Character> team2 = new ArrayList<Character>();
 
     // status randomizadas dentro de un rango
-
-
 
 }
