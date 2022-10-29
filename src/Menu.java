@@ -1,11 +1,12 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Menu {
 
     private static Scanner scanner = new Scanner(System.in); //Scanner
 
-    public static void run() throws IOException {
+    public static void run(ArrayList<Character> team1, ArrayList<Character> team2) throws IOException {
 
         boolean run = true; //when "run" is True, menu is "looping"
 
@@ -40,7 +41,7 @@ public abstract class Menu {
                     clearScreen();
                     System.out.println("Create Manual Characters....");
                     System.out.println("Press ENTER to continue...");
-                    CharacterCreator.menu();
+                    CharacterCreator.menu(team1, team2);
                     System.in.read();
                     break;
                 }
