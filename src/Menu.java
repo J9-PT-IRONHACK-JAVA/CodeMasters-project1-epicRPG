@@ -1,11 +1,11 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Menu {
+public abstract class Menu {
 
-    private Scanner scanner = new Scanner(System.in); //Scanner
+    private static Scanner scanner = new Scanner(System.in); //Scanner
 
-    public void run() throws IOException {
+    public static void run() throws IOException {
 
         boolean run = true; //when "run" is True, menu is "looping"
 
@@ -38,19 +38,17 @@ public class Menu {
                 }
                 case 1: {
                     clearScreen();
-                    var creator = new CharacterCreator();
-                    creator.menu(scanner);
+                    System.out.println("Create Manual Characters....");
                     System.out.println("Press ENTER to continue...");
+
                     System.in.read();
                     break;
                 }
                 case 2: {
                     clearScreen();
-                    var creator = new CharacterCreator();
-                    System.out.println("Number of characteres??");
-                    int q=scanner.nextInt();
-                    creator.randomCreate(q);
-                    System.out.println("Press DOUBLE ENTER to continue...");
+                    System.out.println("Create Random Characters....");
+                    System.out.println("Press ENTER to continue...");
+
                     System.in.read();
                     break;
 
@@ -98,12 +96,10 @@ public class Menu {
     }
 
     // Scren cleaner
-    public void clearScreen(){
+    public static void clearScreen(){
         for (int i = 0; i < 30; i++) {
             System.out.println();
-
         }
     }
-
 
 }
