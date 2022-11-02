@@ -8,9 +8,9 @@ public abstract class Menu {
 
     public static void run(ArrayList<Character> team1, ArrayList<Character> team2) throws IOException {
 
-        boolean run = true; //when "run" is True, menu is "looping"
+        int option= 0;
 
-        while (run){
+        while (option != -1){
             clearScreen();
             System.out.println("Welcome to EPIC RPG!");
             System.out.println("Select option:");
@@ -19,7 +19,6 @@ public abstract class Menu {
             System.out.println("3) Create a random teams.");
             System.out.println("4) Import CSV.");
             System.out.println("5) Exit.");
-            int option;
 
             try{
                 option = Integer.parseInt(scanner.nextLine());
@@ -41,17 +40,18 @@ public abstract class Menu {
                     clearScreen();
                     System.out.println("Create Manual Characters....");
                     System.out.println("Press ENTER to continue...");
-                    CharacterCreator.menu(team1, team2);
                     System.in.read();
-                    break;
+                    CharacterCreator.menu(team1, team2);
+                    return;
+                    //break;
                 }
                 case 2: {
                     clearScreen();
                     System.out.println("Chose between 3 random generated characters....");
                     System.out.println("Press ENTER to continue...");
-                    CharacterThreeRandom.menu();
                     System.in.read();
-                    break;
+                    CharacterThreeRandom.menu();
+                    return;
 
                 }
                 case 3: {
@@ -60,8 +60,7 @@ public abstract class Menu {
                     System.out.println("Press ENTER to continue...");
 //DRINA
                     System.in.read();
-
-                    break;
+                    return;
 
                 }
                 case 4: {
@@ -70,17 +69,15 @@ public abstract class Menu {
                     System.out.println("Press ENTER to continue...");
 //ANDRES
                     System.in.read();
-
-                    break;
+                    return;
 
                 }
-                case 5: {
+                case -1: {
                     clearScreen();
                     System.out.println("Thanks por play!");
                     System.out.println("--==EPIC RPG==--");
-                    run = false; //Close the loop from run (the while loop)
                     scanner.close();
-                    break;
+                    System.exit(-1);
 
                 }
                 default: {

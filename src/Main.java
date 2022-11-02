@@ -8,10 +8,17 @@ public class Main {
         var team1 = new ArrayList<Character>();
         var team2 = new ArrayList<Character>();
 
-//        Banners.logo();
+        Banners.logo();
         Menu.run(team1, team2);
+        Banners.swords();
+        System.out.println("Team 1:");
         for (Character este : team1) {
             System.out.println(este.getName());
         }
+        System.out.println("\nTeam 2:");
+        for (Character este : team2) {
+            System.out.println(este.getName());
+        }
+        //FIGHT CLASS
     }
 }

@@ -18,7 +18,9 @@ public class CharacterThreeRandom {
         System.out.println("\nNICE! You are going to fight "+characters+" vs "+characters+"\n");
         System.out.println("TIME TO SET THE TEAM 1:");
         for (int i = 0; i < characters; i++) {
-            System.out.println("\nCHARACTER "+(i+1)+".\n 1. Warrior or 2. Wizard?");
+            System.out.println("\nCHARACTER " + (i+1) + "\n");
+            Banners.warriorWizard();
+            System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
@@ -37,6 +39,7 @@ public class CharacterThreeRandom {
         }
         System.out.println("\n\nTIME TO SET THE TEAM 2:");
         for (int i = 0; i < characters; i++) {
+            Banners.warriorWizard();
             System.out.println("\nCHARACTER "+(i+1)+".\n 1. Warrior or 2. Wizard?");
             character = 0;
             while (character != 1 || character != 2) {
@@ -77,10 +80,10 @@ public class CharacterThreeRandom {
         int hp3 = 100 + (int)(Math.random() * ((200 - 100) + 1));
 
         System.out.println("You have to choose between these three warriors:\n");
-        System.out.println("Name:    \t"+name1+"\t\t"+name2+"\t\t"+name3);
-        System.out.println("Stamina: \t"+stamina1+"\t\t\t"+stamina2+"\t\t\t"+stamina3);
-        System.out.println("Strength:\t"+strength1+"\t\t\t"+strength2+"\t\t\t"+strength3);
-        System.out.println("HP:      \t"+hp1+"\t\t\t"+hp2+"\t\t\t"+hp3);
+        System.out.printf("%-10s %-10s %-10s %-10s\n", "Name:", name1, name2, name3);
+        System.out.printf("%-10s %-10s %-10s %-10s\n", "Stamina:", stamina1, stamina2, stamina3);
+        System.out.printf("%-10s %-10s %-10s %-10s\n", "Strength:", strength1, strength2, strength3);
+        System.out.printf("%-10s %-10s %-10s %-10s\n", "HP:", hp1, hp2, hp3);
         System.out.println("\nName of your chosen warrior:");
         while (!selected.equals(name1) || !selected.equals(name2) || !selected.equals(name3)){
             selected = scan.nextLine();
@@ -121,10 +124,10 @@ public class CharacterThreeRandom {
         int hp3 = 100 + (int)(Math.random() * ((200 - 100) + 1));
 
         System.out.println("You have to choose between these three wizards:\n");
-        System.out.println("Name:\t\t"+name1+"\t"+name2+"\t"+name3);
-        System.out.println("Mana:\t"+mana1+"\t\t"+mana2+"\t\t"+mana3);
-        System.out.println("Intelligence:\t"+intelligence1+"\t\t\t"+intelligence2+"\t\t\t"+intelligence3);
-        System.out.println("HP:\t\t\t"+hp1+"\t\t\t"+hp2+"\t\t\t"+hp3);
+        System.out.printf("%-15s %-10s %-10s %-10s\n", "Name:", name1, name2, name3);
+        System.out.printf("%-15s %-10s %-10s %-10s\n", "Mana:", mana1, mana2, mana3);
+        System.out.printf("%-15s %-10s %-10s %-10s\n", "Intelligence:", intelligence1, intelligence2, intelligence3);
+        System.out.printf("%-15s %-10s %-10s %-10s\n", "HP:", hp1, hp2, hp3);
         System.out.println("\nName of your chosen wizard:");
         while (!selected.equals(name1) || !selected.equals(name2) || !selected.equals(name3)){
             selected = scan.nextLine();

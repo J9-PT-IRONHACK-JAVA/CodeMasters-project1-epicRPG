@@ -10,16 +10,16 @@ public class CharacterCreator {
         int characters;
 
         var scan = new Scanner(System.in);
-//        var team1 = new ArrayList<Character>();
-//        var team2 = new ArrayList<Character>();
 
         System.out.println("How many characters do you want for each team:");
         characters = scan.nextInt();
         scan.nextLine();
-        System.out.println("\nNICE! You are going to fight "+characters+" vs "+characters+"\n");
+        System.out.println("\nNICE! You are going to fight " + characters + " vs " + characters + "\n");
         System.out.println("TIME TO SET THE TEAM 1:");
         for (int i = 0; i < characters; i++) {
-            System.out.println("\nCHARACTER "+(i+1)+".\n 1. Warrior or 2. Wizard?");
+            System.out.println("\nCHARACTER " + (i+1) + "\n");
+            Banners.warriorWizard();
+            System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
@@ -39,7 +39,9 @@ public class CharacterCreator {
 
         System.out.println("\n\nTIME TO SET THE TEAM 2:");
         for (int i = 0; i < characters; i++) {
-            System.out.println("\nCHARACTER " +(i+1)+ ".\n 1. Warrior or 2. Wizard?");
+            System.out.println("\nCHARACTER " + (i+1) + "\n");
+            Banners.warriorWizard();
+            System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
@@ -56,33 +58,7 @@ public class CharacterCreator {
                 }
             }
             character=0;
-
         }
-        for (int i = 0; i < characters; i++) {
-            System.out.println("Adding Character to TEAM Nª 2");
-            System.out.println("\nCharacter " + (i + 1) + ".\n 1. Warrior or 2. Wizard?");
-            while (character != 1 && character != 2) {
-                character = scan.nextInt();
-                if (character != 1 && character != 2) {
-                    System.out.println("Bad input!");
-                }
-            }
-            if (character == 1) {
-                team2.add(new Warrior(i + 1, "Warrior", 50, 100, 50));
-            } else if (character == 2) {
-                team2.add(new Wizard(i + 1, "Wizard", 50, 100, 50));
-            }
-            character=0;
-
-        }
-
-        for (int i = 0; i < characters; i++) {
-            System.out.println(team1.get(i));
-        }
-        for (int i = 0; i < characters; i++) {
-            System.out.println(team2.get(i));
-        }
-
     }
 
     private static void warriorCreator(Scanner scan, ArrayList<Character> team, int i) {
