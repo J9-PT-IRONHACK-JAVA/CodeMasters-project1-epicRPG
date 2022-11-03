@@ -1,5 +1,5 @@
 public interface Attacker {
 
-    void attack();
+    int attack(); //Modifique que RETORNE para usar el damage
 
 }

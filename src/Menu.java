@@ -47,8 +47,9 @@ public abstract class Menu {
                 case 2: {
                     clearScreen();
                     System.out.println("Chose between 3 random generated characters....");
-                    System.out.println("Press ENTER to continue...");
                     CharacterThreeRandom.menu(team1, team2);
+                    System.out.println("Press ENTER to continue...");
+                    Battle.Battle(team1,team2,scanner);
                     System.in.read();
                     break;
 

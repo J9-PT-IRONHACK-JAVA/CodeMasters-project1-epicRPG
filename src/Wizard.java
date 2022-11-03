@@ -41,7 +41,8 @@ public class Wizard extends Character implements Attacker{
     }
 
     @Override
-    public void attack() {
+    public int attack() {
 
+        return 0; // Puse 0 para poder probar!A
     }
 }
