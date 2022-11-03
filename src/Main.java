@@ -12,12 +12,12 @@ public class Main {
         Menu.run(team1, team2);
         Banners.swords();
         System.out.println("Team 1:");
-        for (Character este : team1) {
-            System.out.println(este.getName());
+        for (Character player : team1) {
+            System.out.println(player.getName());
         }
         System.out.println("\nTeam 2:");
-        for (Character este : team2) {
-            System.out.println(este.getName());
+        for (Character player : team2) {
+            System.out.println(player.getName());
         }
         //FIGHT CLASS
     }
