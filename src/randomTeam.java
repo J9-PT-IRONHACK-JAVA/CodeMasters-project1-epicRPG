@@ -30,10 +30,10 @@ public class randomTeam {
             switch (classDice) {
                 case 1:
                     // 1º Clase  - 2º Nombre - 3º HP - 4º Stamina/mana - 5º Fuerza/inteligencia
-                    team1.add("Wizard", "RandomName1", (50 + (int) (Math.random() * ((100 - 50) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((50 - 1) + 1))));
+                    team1.add(i, "RandomName1", (50 + (int) (Math.random() * ((100 - 50) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((50 - 1) + 1))));
                     break;
                 case 2:
-                    team1.add("Warrior", "RandomName2", (100 + (int) (Math.random() * ((200 - 100) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((10 - 1) + 1))));
+                    team1.add(i, "RandomName2", (100 + (int) (Math.random() * ((200 - 100) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((10 - 1) + 1))));
                     break;
             }
         }
@@ -41,10 +41,10 @@ public class randomTeam {
         for (int i = 0; i <= numberOfRandomPlayers; i++) {
             switch (classDice) {
                 case 1:
-                    team2.add("Wizard", "RandomName1", (50 + (int) (Math.random() * ((100 - 50) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((50 - 1) + 1))));
+                    team2.add(i, "RandomName1", (50 + (int) (Math.random() * ((100 - 50) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((50 - 1) + 1))));
                     break;
                 case 2:
-                    team2.add("Warrior", "RandomName2", (100 + (int) (Math.random() * ((200 - 100) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((10 - 1) + 1))));
+                    team2.add(i, "RandomName2", (100 + (int) (Math.random() * ((200 - 100) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((10 - 1) + 1))));
                     break;
             }
         }
