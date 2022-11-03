@@ -22,6 +22,7 @@ public class Battle {
             listCharacters(team2);
             System.out.println("************");
 
+
             System.out.println("Start battle!");
 
             // Cambiarle el loop para que ataque hasta que quede en 0 el HP de TODOS
