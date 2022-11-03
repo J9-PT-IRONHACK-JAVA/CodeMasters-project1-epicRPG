@@ -3,14 +3,12 @@ import java.util.Scanner;
 
 public class CharacterThreeRandom {
 
-    public static void menu(){
+    public static void menu(ArrayList<Character> team1, ArrayList<Character> team2){
 
         int character;
         int characters;
 
         var scan = new Scanner(System.in);
-        var team1 = new ArrayList<Character>();
-        var team2 = new ArrayList<Character>();
 
         System.out.println("How many characters do you want for each team:");
         characters = scan.nextInt();

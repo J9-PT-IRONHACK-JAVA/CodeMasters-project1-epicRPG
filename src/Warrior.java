@@ -9,7 +9,7 @@ public class Warrior extends Character implements Attacker{
         if (hp>100){
             super.setHp(100);
         }else if (hp<1){
-            super.setHp(1);
+            super.setHp(0); //HP Minimo 0
         }
         else{
             super.setHp(hp);
@@ -54,7 +54,7 @@ public class Warrior extends Character implements Attacker{
     }
 
     @Override
-    public void attack() {
+    public int attack() {
         int damage;
         // heavy attack
         if (stamina>=5){
@@ -64,17 +64,7 @@ public class Warrior extends Character implements Attacker{
             damage = strength/2;
             stamina+=1;
         }
-        // Ya tenemos el damage, ahora ver como "atacamos" al enemigo...
-        // propeustas de andres:
-        // opcion 1:
-        // recibir el objeto ENEMY en el signature del attack, y hacer:
-        // enemy.setHp(enemy.getHp-damage);
-
-        // opcion 2:
-        // en este metodo retornar el valor del DAMAGE y
-        // en la logica de juego, aplicar lo mismo que arriba:
-        // enemy.setHp(enemy.getHp-damage);
-        // teniendo en cuenta que enemy, aca, va a estar en la logica... ay que ver como se llamaria
+        return damage;
 
     }
 }
