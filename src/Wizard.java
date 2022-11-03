@@ -8,8 +8,7 @@ public class Wizard extends Character implements Attacker{
     public Wizard(int id, String name, int hp, int mana, int intelligence) {
         super(id, name, hp);
         setMana(mana);
-        setIntelligence(intelligence);
-    }
+        setIntelligence(intelligence); }
 
     //Getters & Setters
 
@@ -20,15 +19,13 @@ public class Wizard extends Character implements Attacker{
     public void setMana(int mana) {
         if (mana>=10){mana=10;}
         else if (mana<=50){mana=50;}
-        else {mana= mana;}
-    }
+        else {mana= mana;} }
 
     @Override
     public void setHp(int hp) {
        if (hp > 50){ super.setHp(50);}
        else if (hp < 1){ super.setHp(1);}
-       else  {super.setHp(hp);}
-    }
+       else  {super.setHp(hp);} }
 
     public int getIntelligence() {
          return intelligence;
@@ -37,11 +34,16 @@ public class Wizard extends Character implements Attacker{
     public void setIntelligence(int intelligence) {
         if (intelligence>=1){intelligence=1;}
         else if (intelligence<=50){intelligence=50;}
-        else {intelligence= intelligence;}
-    }
+        else {intelligence= intelligence;} }
 
     @Override
     public void attack() {
-
-    }
+        int damage = intelligence;
+        if (damage>=5){
+           //fireball
+           mana = mana-5;}
+        else {
+           // staff hit
+           damage=2;
+           mana = mana +1; }; }
 }
