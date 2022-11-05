@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class randomTeam {
 
-    public static void generate() throws IOException {
+    public static void generate(ArrayList<Character> team1, ArrayList<Character> team2) throws IOException {
 
         // Crear partidos completamente random
         // nº jugadores random entre 2 y 20
@@ -21,9 +21,6 @@ public class randomTeam {
 
         // ratio warrior:wizard aleatorio
         int classDice = (2 + (int) (Math.random() * ((2 - 1) + 1)));
-        ArrayList team1 = new ArrayList();
-        ArrayList team2 = new ArrayList();
-
 
         //* PENDIENTE CREAR CLASES DE TEAM PARA AÑADIR OBJETOS *\\
         // Add to Team 1
@@ -32,10 +29,10 @@ public class randomTeam {
             switch (classDice) {
                 case 1:
                     // 1º Clase  - 2º Nombre - 3º HP - 4º Stamina/mana - 5º Fuerza/inteligencia
-                    team1.add(i, "RandomName1", (50 + (int) (Math.random() * ((100 - 50) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((50 - 1) + 1))));
+                    team1.add(new Warrior(i, "RandomName1", (50 + (int) (Math.random() * ((100 - 50) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((50 - 1) + 1)))));
                     break;
                 case 2:
-                    team1.add(i, "RandomName2", (100 + (int) (Math.random() * ((200 - 100) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((10 - 1) + 1))));
+                    team1.add(new Wizard(i, "RandomName2", (100 + (int) (Math.random() * ((200 - 100) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((10 - 1) + 1)))));
                     break;
             }
         }
@@ -43,10 +40,10 @@ public class randomTeam {
         for (int i = 0; i <= numberOfRandomPlayers; i++) {
             switch (classDice) {
                 case 1:
-                    team2.add(i, "RandomName1", (50 + (int) (Math.random() * ((100 - 50) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((50 - 1) + 1))));
+                    team2.add(new Warrior(i, "RandomName1", (50 + (int) (Math.random() * ((100 - 50) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((50 - 1) + 1)))));
                     break;
                 case 2:
-                    team2.add(i, "RandomName2", (100 + (int) (Math.random() * ((200 - 100) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((10 - 1) + 1))));
+                    team2.add(new Wizard(i, "RandomName2", (100 + (int) (Math.random() * ((200 - 100) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((10 - 1) + 1)))));
                     break;
             }
         }

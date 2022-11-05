@@ -109,8 +109,8 @@ public class Battle {
             char2 = ((Wizard)char2);
         }
 
-        char1.setHp(char1.getHp()-((Attacker) char2).attack());
-        char2.setHp(char2.getHp()-((Attacker) char1).attack());
+        //char1.setHp(char1.getHp()-((Attacker) char2).attack());
+        //char2.setHp(char2.getHp()-((Attacker) char1).attack());
 
     }
 

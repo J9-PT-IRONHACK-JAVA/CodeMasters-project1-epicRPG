@@ -1,5 +1,7 @@
 package com.ironhack;
 
+import net.datafaker.Faker;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,6 +13,7 @@ public class CharacterThreeRandom {
         int characters;
 
         var scan = new Scanner(System.in);
+        var faker = new Faker();
 
         System.out.println("How many characters do you want for each team:");
         characters = scan.nextInt();
@@ -20,7 +23,7 @@ public class CharacterThreeRandom {
         for (int i = 0; i < characters; i++) {
             System.out.println("\nCHARACTER " + (i+1) + "\n");
             Banners.warriorWizard();
-            System.out.println(" 1. com.ironhack.Warrior or 2. com.ironhack.Wizard?");
+            System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
@@ -29,10 +32,10 @@ public class CharacterThreeRandom {
                     System.out.println("Bad input! Write 1 or 2 and press intro.");
                 }
                 if (character == 1) {
-                    threeRandomWarriors(scan, team1, i);
+                    threeRandomWarriors(scan, team1, i, faker);
                     break;
                 } else if (character == 2){
-                    threeRandomWizards(scan, team1, i);
+                    threeRandomWizards(scan, team1, i, faker);
                     break;
                 }
             }
@@ -40,7 +43,7 @@ public class CharacterThreeRandom {
         System.out.println("\n\nTIME TO SET THE TEAM 2:");
         for (int i = 0; i < characters; i++) {
             Banners.warriorWizard();
-            System.out.println("\nCHARACTER "+(i+1)+".\n 1. com.ironhack.Warrior or 2. com.ironhack.Wizard?");
+            System.out.println("\nCHARACTER "+(i+1)+".\n 1. Warrior or 2. Wizard?");
             character = 0;
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
@@ -49,23 +52,37 @@ public class CharacterThreeRandom {
                     System.out.println("Bad input! Write 1 or 2 and press intro.");
                 }
                 if (character == 1) {
-                    threeRandomWarriors(scan, team2, i);
+                    threeRandomWarriors(scan, team2, i, faker);
                     break;
                 } else if (character == 2){
-                    threeRandomWizards(scan, team2, i);
+                    threeRandomWizards(scan, team2, i, faker);
                     break;
                 }
             }
         }
     }
 
-    public static void threeRandomWarriors(Scanner scan, ArrayList<Character> team, int i){
+    public static void threeRandomWarriors(Scanner scan, ArrayList<Character> team, int i, Faker faker){
 
         String selected = "test";
-        String[] namesList = {"Federico", "Patricia", "Andres", "Drina", "Ivan", "Valerio"};
-        String name1 = namesList[0 + (int)(Math.random() * ((5 - 0) + 1))];
-        String name2 = namesList[0 + (int)(Math.random() * ((5 - 0) + 1))];
-        String name3 = namesList[0 + (int)(Math.random() * ((5 - 0) + 1))];
+        String name1 = faker.witcher().monster();
+        if (name1.indexOf(" ") != -1) {
+            name1 = name1.substring(0, name1.indexOf(" "));
+        }
+        String name2 = faker.witcher().monster();
+        if (name2.indexOf(" ") != -1) {
+            name2 = name2.substring(0, name2.indexOf(" "));
+        }
+        String name3 = faker.witcher().monster();
+        if (name3.indexOf(" ") != -1) {
+            name3 = name3.substring(0, name3.indexOf(" "));
+        }
+
+        if (name2.equals(name1)) {name2 += " Jr";}
+        if (name3.equals(name1) || name3.equals(name2)) {
+            name3 += " Jr";
+            if (name3.equals(name2)) {name3 += " Jr";}
+        }
 
         int stamina1 = 10 + (int)(Math.random() * ((50 - 10) + 1));
         int stamina2 = 10 + (int)(Math.random() * ((50 - 10) + 1));
@@ -103,13 +120,27 @@ public class CharacterThreeRandom {
         }
     }
 
-    public static void threeRandomWizards(Scanner scan, ArrayList<Character> team, int i){
+    public static void threeRandomWizards(Scanner scan, ArrayList<Character> team, int i, Faker faker){
 
         String selected = "test";
-        String[] namesList = {"Federico", "Patricia", "Andres", "Drina", "Ivan", "Valerio"};
-        String name1 = namesList[0 + (int)(Math.random() * ((5 - 0) + 1))];
-        String name2 = namesList[0 + (int)(Math.random() * ((5 - 0) + 1))];
-        String name3 = namesList[0 + (int)(Math.random() * ((5 - 0) + 1))];
+        String name1 = faker.witcher().witcher();
+        if (name1.indexOf(" ") != -1) {
+            name1 = name1.substring(0, name1.indexOf(" "));
+        }
+        String name2 = faker.witcher().witcher();
+        if (name2.indexOf(" ") != -1) {
+            name2 = name2.substring(0, name2.indexOf(" "));
+        }
+        String name3 = faker.witcher().witcher();
+        if (name3.indexOf(" ") != -1) {
+            name3 = name3.substring(0, name3.indexOf(" "));
+        }
+
+        if (name2.equals(name1)) {name2 += " Jr";}
+        if (name3.equals(name1) || name3.equals(name2)) {
+            name3 += " Jr";
+            if (name3.equals(name2)) {name3 += " Jr";}
+        }
 
         int mana1 = 10 + (int)(Math.random() * ((50 - 10) + 1));
         int mana2 = 10 + (int)(Math.random() * ((50 - 10) + 1));

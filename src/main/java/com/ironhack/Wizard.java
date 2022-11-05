@@ -39,7 +39,7 @@ public class Wizard extends Character implements Attacker{
         else {intelligence= intelligence;} }
 
     @Override
-    public void attack() {
+    public int attack() {
         int damage = intelligence;
         if (damage>=5){
            //fireball
@@ -49,5 +49,6 @@ public class Wizard extends Character implements Attacker{
            damage=2;
            mana = mana +1;
         }
+        return damage;
     }
 }
