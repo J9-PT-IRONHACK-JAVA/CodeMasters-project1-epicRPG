@@ -26,7 +26,7 @@ public class Wizard extends Character implements Attacker{
     @Override
     public void setHp(int hp) {
        if (hp > 50){ super.setHp(50);}
-       else if (hp < 1){ super.setHp(1);}
+       else if (hp < 1){ super.setHp(0);}
        else  {super.setHp(hp);} }
 
     public int getIntelligence() {

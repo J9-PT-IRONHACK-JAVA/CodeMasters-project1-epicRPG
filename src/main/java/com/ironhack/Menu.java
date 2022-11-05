@@ -44,26 +44,24 @@ public abstract class Menu {
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
                     CharacterCreator.menu(team1, team2);
-                    return;
-                    //break;
+                    break;
                 }
                 case 2: {
                     clearScreen();
                     System.out.println("Chose between 3 random generated characters....");
                     CharacterThreeRandom.menu(team1, team2);
                     System.out.println("Press ENTER to continue...");
-                    //Battle.Battle(team1,team2,scanner);
+                    Battle.battle(team1,team2,scanner);
                     System.in.read();
-                    return;
+                    break;
 
                 }
                 case 3: {
                     clearScreen();
                     System.out.println("Create a random teams.....");
                     System.out.println("Press ENTER to continue...");
-//DRINA
                     System.in.read();
-                    return;
+                    break;
 
                 }
                 case 4: {
