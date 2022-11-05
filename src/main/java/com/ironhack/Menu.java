@@ -52,9 +52,8 @@ public abstract class Menu {
                     System.out.println("Chose between 3 random generated characters....");
                     CharacterThreeRandom.menu(team1, team2);
                     System.out.println("Press ENTER to continue...");
-                    Battle.Battle(team1,team2,scanner);
+                    //Battle.Battle(team1,team2,scanner);
                     System.in.read();
-                    CharacterThreeRandom.menu();
                     return;
 
                 }
