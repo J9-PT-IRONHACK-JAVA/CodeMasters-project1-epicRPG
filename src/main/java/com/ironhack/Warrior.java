@@ -56,7 +56,7 @@ public class Warrior extends Character implements Attacker{
     }
 
     @Override
-    public int attack() {
+    public void attack() {
         int damage;
         // heavy attack
         if (stamina>=5){
@@ -66,7 +66,6 @@ public class Warrior extends Character implements Attacker{
             damage = strength/2;
             stamina+=1;
         }
-        return damage;
 
     }
 }

@@ -17,8 +17,8 @@ public abstract class Menu {
             System.out.println("Welcome to EPIC RPG!");
             System.out.println("Select option:");
             System.out.println("1) Create manual characters.");
-            System.out.println("2) Chose between 3 random characters.");
-            System.out.println("3) Create a random teams.");
+            System.out.println("2) Choose between 3 random characters.");
+            System.out.println("3) Create a random team.");
             System.out.println("4) Import CSV.");
             System.out.println("5) Exit.");
 
@@ -54,15 +54,14 @@ public abstract class Menu {
                     System.out.println("Press ENTER to continue...");
                     Battle.Battle(team1,team2,scanner);
                     System.in.read();
-                    CharacterThreeRandom.menu();
+              //      CharacterThreeRandom.menu();
                     return;
 
                 }
-                case 3: {
+                case 3: {       //DRINA
                     clearScreen();
-                    System.out.println("Create a random teams.....");
-                    System.out.println("Press ENTER to continue...");
-//DRINA
+               //     System.out.println("You will play with a random team...");
+                    RandomTeam.generate(team1, team2);
                     System.in.read();
                     return;
 

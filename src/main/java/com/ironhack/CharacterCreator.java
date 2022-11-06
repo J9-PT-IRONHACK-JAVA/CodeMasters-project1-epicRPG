@@ -20,7 +20,7 @@ public class CharacterCreator {
         for (int i = 0; i < characters; i++) {
             System.out.println("\nCHARACTER " + (i+1) + "\n");
             Banners.warriorWizard();
-            System.out.println(" 1. com.ironhack.Warrior or 2. com.ironhack.Wizard?");
+            System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
@@ -42,7 +42,7 @@ public class CharacterCreator {
         for (int i = 0; i < characters; i++) {
             System.out.println("\nCHARACTER " + (i+1) + "\n");
             Banners.warriorWizard();
-            System.out.println(" 1. com.ironhack.Warrior or 2. com.ironhack.Wizard?");
+            System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
@@ -69,7 +69,7 @@ public class CharacterCreator {
         int strength;
         int hp;
 
-        System.out.println("\nName for the com.ironhack.Warrior:");
+        System.out.println("\nName for the Warrior:");
         name = scan.nextLine();
         System.out.println("\nSet the HP between 100 and 200:");
         hp = scan.nextInt();
@@ -90,7 +90,7 @@ public class CharacterCreator {
         int intelligence;
         int hp;
 
-        System.out.println("\nName for the com.ironhack.Wizard:");
+        System.out.println("\nName for the Wizard:");
         name = scan.nextLine();
         System.out.println("\nSet the HP between 50 and 100:");
         hp = scan.nextInt();

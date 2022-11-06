@@ -58,12 +58,12 @@ public class Battle {
     private static void listCharacters(ArrayList<Character> team){
         Character character;
         for (int i = 0; i < team.size(); i++) {
-            if(team.get(i).getClass().getName().equals("com.ironhack.Warrior")){
+            if(team.get(i).getClass().getName().equals("Warrior")){
                 character = (Warrior)team.get(i);
             }else{
                 character = (Wizard)team.get(i);
             }
-            if(character.getClass().getName().equals("com.ironhack.Warrior")) {
+            if(character.getClass().getName().equals("Warrior")) {
                 System.out.println(
                                 (i+1) + " - " +
                                 character.getClass().getName() + " - " +
@@ -98,19 +98,19 @@ public class Battle {
     public static void figth(Character char1, Character char2){
         String char1Type;
         String char2Type;
-        if (char1.getClass().getName().equals("com.ironhack.Warrior")){
+        if (char1.getClass().getName().equals("Warrior")){
             char1 = ((Warrior)char1);
         }else{
             char1 = ((Wizard)char1);
         }
-        if (char2.getClass().getName().equals("com.ironhack.Warrior")){
+        if (char2.getClass().getName().equals("Warrior")){
             char2 = ((Warrior)char2);
         }else{
             char2 = ((Wizard)char2);
         }
 
-        char1.setHp(char1.getHp()-((Attacker) char2).attack());
-        char2.setHp(char2.getHp()-((Attacker) char1).attack());
+//        char1.setHp(char1.getHp()-((Attacker) char2).attack());
+//        char2.setHp(char2.getHp()-((Attacker) char1).attack());
 
     }
 

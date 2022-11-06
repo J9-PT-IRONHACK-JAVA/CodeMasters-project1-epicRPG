@@ -20,7 +20,7 @@ public class CharacterThreeRandom {
         for (int i = 0; i < characters; i++) {
             System.out.println("\nCHARACTER " + (i+1) + "\n");
             Banners.warriorWizard();
-            System.out.println(" 1. com.ironhack.Warrior or 2. com.ironhack.Wizard?");
+            System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
@@ -40,7 +40,7 @@ public class CharacterThreeRandom {
         System.out.println("\n\nTIME TO SET THE TEAM 2:");
         for (int i = 0; i < characters; i++) {
             Banners.warriorWizard();
-            System.out.println("\nCHARACTER "+(i+1)+".\n 1. com.ironhack.Warrior or 2. com.ironhack.Wizard?");
+            System.out.println("\nCHARACTER "+(i+1)+".\n 1. Warrior or 2. Wizard?");
             character = 0;
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
