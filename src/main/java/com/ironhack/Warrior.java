@@ -12,6 +12,7 @@ public class Warrior extends Character implements Attacker{
             super.setHp(200);
         }else if (hp<1){
             super.setHp(0); //HP Minimo 0
+            setAlive(false);
         }
         else{
             super.setHp(hp);

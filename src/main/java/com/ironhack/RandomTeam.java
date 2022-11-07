@@ -25,7 +25,7 @@ public class RandomTeam {
 
         // Add to Team 1
         // status randomizadas dentro de un rango
-        for (int i = 0; i <= numberOfRandomPlayers; i++) { // Ojo aca, el MENOR o IGUAL, hace que cree 1 mas...
+        for (int i = 0; i < numberOfRandomPlayers; i++) { // Ojo aca, el MENOR o IGUAL, hace que cree 1 mas...
             int classDice = (1 + (int) (Math.random() * ((2 - 1) + 1)));
             System.out.println(classDice);
             switch (classDice) {
@@ -39,7 +39,7 @@ public class RandomTeam {
             }
         }
         // Add to Team 2
-        for (int i = 0; i <= numberOfRandomPlayers; i++) {// Ojo aca, el MENOR o IGUAL, hace que cree 1 mas...
+        for (int i = 0; i < numberOfRandomPlayers; i++) {// Ojo aca, el MENOR o IGUAL, hace que cree 1 mas...
             int classDice = (1 + (int) (Math.random() * ((2 - 1) + 1)));
             System.out.println(classDice);
 

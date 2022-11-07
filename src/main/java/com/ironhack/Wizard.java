@@ -34,6 +34,7 @@ public class Wizard extends Character implements Attacker{
            super.setHp(50);
        }else if (hp < 1){
            super.setHp(0);
+           setAlive(false); // se agrega el SET ALIVE en FALSE
        } else {
            super.setHp(hp);
        }

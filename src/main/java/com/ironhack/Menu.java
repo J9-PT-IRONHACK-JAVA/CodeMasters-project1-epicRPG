@@ -58,11 +58,10 @@ public abstract class Menu {
                 }
                 case 3: {
                     clearScreen();
-                    System.out.println("Create a random teams.....");
-                    System.out.println("Press ENTER to continue...");
-                    System.in.read();
-                    break;
+                    RandomTeam.generate(team1,team2);
+                    Battle.battle(team1,team2,scanner);
 
+                    break;
                 }
                 case 4: {
                     clearScreen();
@@ -72,13 +71,12 @@ public abstract class Menu {
                     System.in.read();
                     break;
                 }
-                case -1: {
+                case 5: {
                     clearScreen();
                     System.out.println("Thanks for play!");
                     System.out.println("--==EPIC RPG==--");
                     scanner.close();
                     System.exit(-1);
-
                 }
                 default: {
                     clearScreen();
