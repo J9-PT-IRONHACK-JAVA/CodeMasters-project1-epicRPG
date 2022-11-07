@@ -2,6 +2,7 @@ package com.ironhack;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Battle {
@@ -25,37 +26,48 @@ public class Battle {
             System.out.println("************");
             System.out.println("Start battle!");
 
-            // Cambiarle el loop para que ataque hasta que quede en 0 el HP de TODOS
             while (sumHp(team1) != 0 && sumHp(team2) != 0){
                 System.out.println("Team 1 select character:");
-                // imprimir lista character VIVOS y opcion a elegir
+                listCharacters(team1);
                 op1 = scanner.nextInt();
                 System.out.println("Team 2 select character:");
+                listCharacters(team2);
                 op2 = scanner.nextInt();
+                // Set round Nº 1
                 int round=1;
+                var figther1=team1.get(op1-1);
+                var figther2=team2.get(op2-1);
 
                 // While los 2 hps sean mayor a 0
-                while (team1.get(op1-1).getHp() > 0 && team2.get(op1-1).getHp() >0){
+                while (figther1.getHp() != 0 && figther2.getHp() != 0){
                     System.out.println("Round Nº: "+round);
-                    figth(team1.get(op1-1),team2.get(op2-1));
-                    listCharacters(team1);
-                    listCharacters(team2);
+                    listCharacters(new ArrayList<Character>(List.of(figther1)));
+                    System.out.println("VS");
+                    listCharacters(new ArrayList<Character>(List.of(figther2)));
+
+                    figth(figther1,figther2);
+
                     round+=1;
                     System.out.println("Press enter to continue...");
                     System.in.read();
                 }
-
-                // Verificar si quedaron en menos de 1 de HP, mandarlos al cementerio
-                if(team1.get(op1-1).getHp() < 1){
-                    cemetery.add(team1.get(op1-1));
+                System.out.println("End of Battle...");
+                int i=1;
+                if(figther1.getHp() < 1){
+                    System.out.println("Fighter of team1 dead...");
+                    cemetery.add(figther1);
                 }
-                if(team2.get(op1-1).getHp() < 1){
-                    cemetery.add(team2.get(op1-1));
+                if(figther2.getHp() < 1){
+                    System.out.println("Fighter of team2 dead...");
+                    cemetery.add(figther2);
                 }
             }
 
         }
-        listCharacters(cemetery);
+        System.out.println("Cemetery:");
+        listCharacters(team1);
+        System.out.println("Press enter to continue...");
+        System.in.read();
         return cemetery;
     }
 
@@ -64,24 +76,27 @@ public class Battle {
         Character character;
         for (int i = 0; i < team.size(); i++) {
             character = team.get(i);
-            if(character instanceof Warrior) {
-            System.out.println(
-                                (i+1) + " - " +
-                                "Warrior - " +
-                                character.getName() + " - " +
-                                "HP: " + character.getHp() + " - " +
-                                "Stamina: "+((Warrior)character).getStamina()+ " - " +
-                                "Strength: "+((Warrior)character).getStrength()
-                );
-            }else{
-                System.out.println(
-                                (i+1) + " - " + "Wizard - " +
-                                character.getName() + " - " +
-                                "HP: " + character.getHp() + " - " +
-                                "Mana: "+((Wizard)character).getMana()+ " - "+
-                                "Intelligence: "+((Wizard)character).getIntelligence()
-                );
+            if (team.get(i).getHp()>0) {
+                if (character instanceof Warrior) {
+                    String warrior =
+                            (i + 1) + ") - " +
+                                    "Warrior - " +
+                                    character.getName() + " - " +
+                                    "HP: " + character.getHp() + " - " +
+                                    "Stamina: " + ((Warrior) character).getStamina() + " - " +
+                                    "Strength: " + ((Warrior) character).getStrength();
 
+                    System.out.println(warrior);
+                } else {
+                    String wizard =
+                            (i + 1) + ") - " +
+                                    "Wizard - " +
+                                    character.getName() + " - " +
+                                    "HP: " + character.getHp() + " - " +
+                                    "Mana: " + ((Wizard) character).getMana() + " - " +
+                                    "Intelligence: " + ((Wizard) character).getIntelligence();
+                    System.out.println(wizard);
+                }
             }
 
         }
