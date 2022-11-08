@@ -2,11 +2,9 @@ package com.ironhack;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
 
 
-public class randomTeam {
+public class RandomTeam {
 
     public static void generate(ArrayList<Character> team1, ArrayList<Character> team2) throws IOException {
 
