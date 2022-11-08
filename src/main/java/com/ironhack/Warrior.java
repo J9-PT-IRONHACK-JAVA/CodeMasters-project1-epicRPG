@@ -68,6 +68,5 @@ public class Warrior extends Character implements Attacker{
             stamina+=1;
         }
         return damage;
-
     }
 }

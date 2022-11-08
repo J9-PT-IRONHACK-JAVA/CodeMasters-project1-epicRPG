@@ -17,8 +17,8 @@ public abstract class Menu {
             System.out.println("Welcome to EPIC RPG!");
             System.out.println("Select option:");
             System.out.println("1) Create manual characters.");
-            System.out.println("2) Chose between 3 random characters.");
-            System.out.println("3) Create a random teams.");
+            System.out.println("2) Choose between 3 random characters.");
+            System.out.println("3) Create a random team.");
             System.out.println("4) Import CSV.");
             System.out.println("5) Exit.");
 
@@ -28,7 +28,6 @@ public abstract class Menu {
             catch (Exception e){
                 option = 0;
             }
-
             switch (option) {
                 case 0: {
                     clearScreen();
@@ -40,7 +39,7 @@ public abstract class Menu {
                 }
                 case 1: {
                     clearScreen();
-                    System.out.println("Create Manual Characters....");
+                    System.out.println("\nCreate Manual Characters....");
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
                     CharacterCreator.menu(team1, team2);
@@ -48,15 +47,14 @@ public abstract class Menu {
                 }
                 case 2: {
                     clearScreen();
-                    System.out.println("Chose between 3 random generated characters....");
-                    CharacterThreeRandom.menu(team1, team2);
+                    System.out.println("\nChose between 3 random generated characters....");
                     System.out.println("Press ENTER to continue...");
                     Battle.battle(team1,team2,scanner);
                     System.in.read();
                     break;
 
                 }
-                case 3: {
+                case 3: {       //DRINA
                     clearScreen();
                     RandomTeam.generate(team1,team2);
                     var cemetery = Battle.battle(team1,team2,scanner);
@@ -69,10 +67,10 @@ public abstract class Menu {
                 }
                 case 4: {
                     clearScreen();
-                    Csv.menuCsv(scanner,team1);
-                    Csv.menuCsv(scanner,team2);
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
+                    Csv.menuCsv(scanner,team1);
+                    Csv.menuCsv(scanner,team2);
                     break;
                 }
                 case 5: {

@@ -18,6 +18,7 @@ public class RandomTeam {
         System.in.read();
 
         // ratio warrior:wizard aleatorio
+
         //int classDice = (2 + (int) (Math.random() * ((2 - 1) + 1)));
 
         //  var team1 = new ArrayList<Character>();
@@ -41,8 +42,6 @@ public class RandomTeam {
         // Add to Team 2
         for (int i = 0; i < numberOfRandomPlayers; i++) {// Ojo aca, el MENOR o IGUAL, hace que cree 1 mas...
             int classDice = (1 + (int) (Math.random() * ((2 - 1) + 1)));
-            System.out.println(classDice);
-
             switch (classDice) {
                 case 1:
                     team2.add(new Warrior(i, "RandomName1", (50 + (int) (Math.random() * ((100 - 50) + 1))), (10 + (int) (Math.random() * ((50 - 10) + 1))), (1 + (int) (Math.random() * ((50 - 1) + 1)))));
