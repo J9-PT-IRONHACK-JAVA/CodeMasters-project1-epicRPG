@@ -8,9 +8,9 @@ public class Warrior extends Character implements Attacker{
     // OVERRIDE - Set HP (Limits 1-100)
     @Override
     public void setHp(int hp) {
-        if (hp>100){
+        if (hp>200){
             super.setHp(100);
-        }else if (hp<1){
+        }else if (hp<100){
             super.setHp(0); //HP Minimo 0
         }
         else{
@@ -67,6 +67,5 @@ public class Warrior extends Character implements Attacker{
             stamina+=1;
         }
         return damage;
-
     }
 }

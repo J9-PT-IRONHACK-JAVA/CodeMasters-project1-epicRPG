@@ -8,7 +8,7 @@ public class Battle {
     private static ArrayList<Character> cemetery;
 
 
-    public static ArrayList<Character> Battle(ArrayList<Character> team1, ArrayList<Character> team2, Scanner scanner) {
+    public static ArrayList<Character> battle(ArrayList<Character> team1, ArrayList<Character> team2, Scanner scanner) {
         int op1;
         int op2;
         // Verificamos que la cantidad de caracteres del primer team sea igual a la cantidad del 2do
