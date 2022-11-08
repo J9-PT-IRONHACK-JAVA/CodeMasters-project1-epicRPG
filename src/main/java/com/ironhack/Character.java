@@ -9,7 +9,7 @@ public abstract class Character {
 
     @Override
     public String toString() {
-        return "com.ironhack.Character{" +
+        return "Character{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

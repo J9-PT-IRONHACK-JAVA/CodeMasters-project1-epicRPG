@@ -17,8 +17,8 @@ public abstract class Menu {
             System.out.println("Welcome to EPIC RPG!");
             System.out.println("Select option:");
             System.out.println("1) Create manual characters.");
-            System.out.println("2) Chose between 3 random characters.");
-            System.out.println("3) Create random teams.");
+            System.out.println("2) Choose between 3 random characters.");
+            System.out.println("3) Create a random team.");
             System.out.println("4) Import CSV.");
             System.out.println("5) Exit.");
 
@@ -56,7 +56,7 @@ public abstract class Menu {
                     return;
 
                 }
-                case 3: {
+                case 3: {       //DRINA
                     clearScreen();
                     System.out.println("\nCreate a random teams.....");
                     System.out.println("Press ENTER to continue...");

@@ -9,18 +9,20 @@ public class RandomTeam {
     public static void generate(ArrayList<Character> team1, ArrayList<Character> team2) throws IOException {
 
         // Crear partidos completamente random
-        // nº jugadores random entre 2 y 20
+        // nº jugadores random entre 2 y 10 (20 era too much)
 
         System.out.println("Press any key to generate a random team");
         System.in.read();
-        int numberOfRandomPlayers = (2 + (int) (Math.random() * ((20 - 2) + 1)));
-        System.out.println("You are going to fight " + numberOfRandomPlayers + "vs. " + numberOfRandomPlayers + ". Press any key to continue. ");
+        int numberOfRandomPlayers = (2 + (int) (Math.random() * ((10 - 2) + 1)));
+        System.out.println("You are going to fight " + numberOfRandomPlayers + " vs. " + numberOfRandomPlayers + ". Press any key to continue. ");
         System.in.read();
 
         // ratio warrior:wizard aleatorio
         int classDice = (2 + (int) (Math.random() * ((2 - 1) + 1)));
 
-        //* PENDIENTE CREAR CLASES DE TEAM PARA AÑADIR OBJETOS *\\
+      //  var team1 = new ArrayList<Character>();
+       // var team2 = new ArrayList<Character>();
+
         // Add to Team 1
         // status randomizadas dentro de un rango
         for (int i = 0; i <= numberOfRandomPlayers; i++) {
