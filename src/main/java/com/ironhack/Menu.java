@@ -59,7 +59,11 @@ public abstract class Menu {
                 case 3: {
                     clearScreen();
                     RandomTeam.generate(team1,team2);
-                    Battle.battle(team1,team2,scanner);
+                    var cemetery = Battle.battle(team1,team2,scanner);
+                    System.out.println("List of death characters:\n");
+                    Battle.printCemetery(cemetery);
+                    System.out.println("\nPress ENTER to continue...\n");
+                    System.in.read();
 
                     break;
                 }
@@ -93,7 +97,11 @@ public abstract class Menu {
 
     // Screen cleaner
     public static void clearScreen(){
-        System.out.print("\033[H\033[2J");
+        //System.out.print("\033[H\033[2J");
+        for (int i = 0; i < 20; i++) {
+            System.out.println("");
+
+        }
     }
 
 }

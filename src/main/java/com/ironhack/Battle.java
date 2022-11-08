@@ -57,26 +57,24 @@ public class Battle {
                 if(team1.get(op1-1).isAlive()==false){
                     System.out.println("Fighter of team1 dead...");
                     if(figther1 instanceof Warrior){
-                        cemetery.add(new Warrior(round, figther1.getName(), 0, ((Warrior) figther1).getStamina(), ((Warrior) figther1).getStrength()));
+                        cemetery.add(new Warrior(round, figther1.getName(), 1, ((Warrior) figther1).getStamina(), ((Warrior) figther1).getStrength()));
                     }else{
-                        cemetery.add(new Wizard(round, figther1.getName(), 0,((Wizard) figther1).getMana(),((Wizard) figther1).getIntelligence()));
+                        cemetery.add(new Wizard(round, figther1.getName(), 1,((Wizard) figther1).getMana(),((Wizard) figther1).getIntelligence()));
                     }
 
                 }
                 if(team2.get(op2-1).isAlive()==false){
                     System.out.println("Fighter of team2 dead...");
                     if(figther2 instanceof Warrior){
-                        cemetery.add(new Warrior(round, figther2.getName(), 0, ((Warrior) figther2).getStamina(), ((Warrior) figther2).getStrength()));
+                        cemetery.add(new Warrior(round, figther2.getName(), 2, ((Warrior) figther2).getStamina(), ((Warrior) figther2).getStrength()));
                     }else{
-                        cemetery.add(new Wizard(round, figther2.getName(), 0,((Wizard) figther2).getMana(),((Wizard) figther2).getIntelligence()));
+                        cemetery.add(new Wizard(round, figther2.getName(), 2,((Wizard) figther2).getMana(),((Wizard) figther2).getIntelligence()));
                     }
                 }
             }
 
         }
-        System.out.println("Cemetery:");
-        listCharacters(cemetery);
-        System.out.println("Press enter to continue...");
+        System.out.println("**** END OF BATTLE ****");
         System.in.read();
         return cemetery;
     }
@@ -123,6 +121,28 @@ public class Battle {
     public static void figth(Character char1, Character char2){
         char1.setHp(char1.getHp()-((Attacker) char2).attack());
         char2.setHp(char2.getHp()-((Attacker) char1).attack());
+    }
+    public static void printCemetery(ArrayList<Character> team){
+        Character character;
+        for (int i = 0; i < team.size(); i++) {
+            character = team.get(i);
+            if (character instanceof Warrior) {
+                String warrior =
+                                (i + 1) + ") † " +
+                                "Warrior - " +
+                                character.getName() + " - " +
+                                "From team Nº: " + character.getHp();
+                System.out.println(warrior);
+            } else {
+                String wizard =
+                                (i + 1) + ") † " +
+                                "Wizard - " +
+                                character.getName() + " - " +
+                                "From team Nº: " + character.getHp();
+                System.out.println(wizard);
+            }
+
+        }
     }
 
 }
