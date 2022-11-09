@@ -23,6 +23,7 @@ public class CharacterThreeRandom {
         System.out.println("TIME TO SET THE TEAM 1:");
         teamCreator(team1, characters, scan, faker);
         //CREATE TEAM 2
+        EpicUtils.clearConsole();
         System.out.println("\n\nTIME TO SET THE TEAM 2:");
         teamCreator(team2, characters, scan, faker);
     }
@@ -30,7 +31,8 @@ public class CharacterThreeRandom {
     private static void teamCreator(ArrayList<Character> team, int characters, Scanner scan, Faker faker) {
         int character;
         for (int i = 0; i < characters; i++) {
-            System.out.println("\nCHARACTER " + (i+1) + "\n");
+            EpicUtils.clearConsole();
+            System.out.println("CHARACTER " + (i+1) + "\n");
             Banners.warriorWizard();
             System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;

@@ -7,16 +7,13 @@ import java.util.Scanner;
 
 public class Battle {
 
-    public static ArrayList<Character> battle(ArrayList<Character> team1, ArrayList<Character> team2, Scanner scanner) throws IOException {
+    public static void battle(ArrayList<Character> team1, ArrayList<Character> team2, Scanner scanner, ArrayList<Character> graveYard) throws IOException, InterruptedException {
         int op1;
         int op2;
-        var cemetery = new ArrayList<Character>();
 
-        // Verificamos que la cantidad de caracteres del primer team sea igual a la cantidad del 2do
-        //Caso contrario se retorna null
+        EpicUtils.loadingBar();
         if (team1.size()!=team2.size()){
             System.out.println("Team number of Characters of teams must be equal");
-            return null;
         }else{
             System.out.println("TEAM 1:");
             listCharacters(team1);
@@ -24,9 +21,12 @@ public class Battle {
             System.out.println("TEAM 2:");
             listCharacters(team2);
             System.out.println("************");
-            System.out.println("Start battle!");
+            System.out.println("Press ENTER to start battle!");
+            System.in.read();
+            EpicUtils.clearConsole();
 
             while (sumHp(team1) != 0 && sumHp(team2) != 0){
+                EpicUtils.clearConsole();
                 System.out.println("Team 1 select character:");
                 listCharacters(team1);
                 op1 = scanner.nextInt();
@@ -40,6 +40,7 @@ public class Battle {
 
                 // While los 2 hps sean mayor a 0
                 while (figther1.getHp() != 0 && figther2.getHp() != 0){
+                    EpicUtils.clearConsole();
                     System.out.println("Round Nº: "+round);
                     listCharacters(new ArrayList<>(List.of(figther1)));
                     System.out.println("VS");
@@ -57,26 +58,25 @@ public class Battle {
                 if(team1.get(op1-1).isAlive()==false){
                     System.out.println("Fighter of team1 dead...");
                     if(figther1 instanceof Warrior){
-                        cemetery.add(new Warrior(round, figther1.getName(), 1, ((Warrior) figther1).getStamina(), ((Warrior) figther1).getStrength()));
+                        graveYard.add(new Warrior(round, figther1.getName(), 1, ((Warrior) figther1).getStamina(), ((Warrior) figther1).getStrength()));
                     }else{
-                        cemetery.add(new Wizard(round, figther1.getName(), 1,((Wizard) figther1).getMana(),((Wizard) figther1).getIntelligence()));
+                        graveYard.add(new Wizard(round, figther1.getName(), 1,((Wizard) figther1).getMana(),((Wizard) figther1).getIntelligence()));
                     }
 
                 }
                 if(team2.get(op2-1).isAlive()==false){
                     System.out.println("Fighter of team2 dead...");
                     if(figther2 instanceof Warrior){
-                        cemetery.add(new Warrior(round, figther2.getName(), 2, ((Warrior) figther2).getStamina(), ((Warrior) figther2).getStrength()));
+                        graveYard.add(new Warrior(round, figther2.getName(), 2, ((Warrior) figther2).getStamina(), ((Warrior) figther2).getStrength()));
                     }else{
-                        cemetery.add(new Wizard(round, figther2.getName(), 2,((Wizard) figther2).getMana(),((Wizard) figther2).getIntelligence()));
+                        graveYard.add(new Wizard(round, figther2.getName(), 2,((Wizard) figther2).getMana(),((Wizard) figther2).getIntelligence()));
                     }
                 }
             }
-
         }
         System.out.println("**** END OF BATTLE ****");
+        System.out.println("Press ENTER to continue.");
         System.in.read();
-        return cemetery;
     }
 
 
@@ -106,7 +106,6 @@ public class Battle {
                     System.out.println(wizard);
                 }
             }
-
         }
     }
 
@@ -141,8 +140,6 @@ public class Battle {
                                 "From team Nº: " + character.getHp();
                 System.out.println(wizard);
             }
-
         }
     }
-
 }

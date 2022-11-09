@@ -1,11 +1,12 @@
 package com.ironhack;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CharacterCreator {
 
-    public static void generate(ArrayList<Character> team1, ArrayList<Character> team2){
+    public static void generate(ArrayList<Character> team1, ArrayList<Character> team2) throws InterruptedException, IOException {
 
         int character = 0;
         int characters;
@@ -25,8 +26,11 @@ public class CharacterCreator {
         } while (characters < 1 || characters > 20);
         System.out.println("\nNICE! You are going to fight " + characters + " vs " + characters + "\n");
         System.out.println("TIME TO SET THE TEAM 1:");
+        System.out.println("\nPress ENTER to continue...");
+        System.in.read();
         for (int i = 0; i < characters; i++) {
-            System.out.println("\nCHARACTER " + (i+1) + "\n");
+            EpicUtils.clearConsole();
+            System.out.println("CHARACTER " + (i+1) + "\n");
             Banners.warriorWizard();
             System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;
@@ -45,10 +49,11 @@ public class CharacterCreator {
                 }
             }
         }
-
-        System.out.println("\n\nTIME TO SET THE TEAM 2:");
+        EpicUtils.clearConsole();
+        System.out.println("IME TO SET THE TEAM 2:");
         for (int i = 0; i < characters; i++) {
-            System.out.println("\nCHARACTER " + (i+1) + "\n");
+            EpicUtils.clearConsole();
+            System.out.println("CHARACTER " + (i+1) + "\n");
             Banners.warriorWizard();
             System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;
@@ -66,7 +71,6 @@ public class CharacterCreator {
                     break;
                 }
             }
-            character=0;
         }
     }
 
@@ -109,6 +113,6 @@ public class CharacterCreator {
         System.out.println("\nSet the intelligence between 1 and 50:");
         intelligence = scan.nextInt();
         scan.nextLine();
-        team1.add(new Warrior(i, name, hp, mana, intelligence));
+        team1.add(new Wizard(i, name, hp, mana, intelligence));
     }
 }

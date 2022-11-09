@@ -10,8 +10,13 @@ public class Main {
 
         var team1 = new ArrayList<Character>();
         var team2 = new ArrayList<Character>();
+        var graveYard = new ArrayList<Character>();
 
+        EpicUtils.clearConsole();
         Banners.logo();
-        Menu.run(team1, team2);
+        System.out.println("Press ENTER to start...");
+        System.in.read();
+        Menu.run(team1, team2, graveYard);
+        Battle.printCemetery(graveYard);
     }
 }
