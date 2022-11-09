@@ -8,12 +8,12 @@ public abstract class Menu {
 
     private static Scanner scanner = new Scanner(System.in); //Scanner
 
-    public static void run(ArrayList<Character> team1, ArrayList<Character> team2) throws IOException {
+    public static void run(ArrayList<Character> team1, ArrayList<Character> team2) throws IOException, InterruptedException {
 
         int option =0;
 
         while (option!=5){
-            clearScreen();
+            EpicUtils.clearConsole();
             System.out.println("Welcome to EPIC RPG!");
             System.out.println("Select option:");
             System.out.println("1) Create manual characters.");
@@ -30,7 +30,7 @@ public abstract class Menu {
             }
             switch (option) {
                 case 0: {
-                    clearScreen();
+                    EpicUtils.clearConsole();
                     System.out.println("Error!! Only NUMBERS please...");
                     System.out.println("Press ENTER to continue...");
                     System.out.println("*********************************");
@@ -38,7 +38,7 @@ public abstract class Menu {
                     break;
                 }
                 case 1: {
-                    clearScreen();
+                    EpicUtils.clearConsole();
                     System.out.println("\nCreate Manual Characters....");
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
@@ -46,16 +46,20 @@ public abstract class Menu {
                     break;
                 }
                 case 2: {
-                    clearScreen();
+                    EpicUtils.clearConsole();
                     System.out.println("\nChose between 3 random generated characters....");
                     System.out.println("Press ENTER to continue...");
+                    System.in.read();
+                    CharacterThreeRandom.generate(team1, team2);
                     Battle.battle(team1,team2,scanner);
                     System.in.read();
                     break;
 
                 }
-                case 3: {       //DRINA
-                    clearScreen();
+                case 3: {
+                    EpicUtils.clearConsole();
+                    System.out.println("\nCreate a random teams.....");
+                    System.out.println("Press ENTER to continue...");
                     RandomTeam.generate(team1,team2);
                     var cemetery = Battle.battle(team1,team2,scanner);
                     System.out.println("List of death characters:\n");
@@ -66,22 +70,22 @@ public abstract class Menu {
                     break;
                 }
                 case 4: {
-                    clearScreen();
+                    EpicUtils.clearConsole();
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
                     Csv.menuCsv(scanner,team1);
                     Csv.menuCsv(scanner,team2);
                     break;
                 }
-                case 5: {
-                    clearScreen();
+                case -1: {
+                    EpicUtils.clearConsole();
                     System.out.println("Thanks for play!");
                     System.out.println("--==EPIC RPG==--");
                     scanner.close();
                     System.exit(-1);
                 }
                 default: {
-                    clearScreen();
+                    EpicUtils.clearConsole();
                     System.out.println("Option Error! Select a correct option...");
                     System.out.println("Press ENTER to continue...");
                     System.out.println("*********************************");
@@ -92,14 +96,4 @@ public abstract class Menu {
             }
         }
     }
-
-    // Screen cleaner
-    public static void clearScreen(){
-        //System.out.print("\033[H\033[2J");
-        for (int i = 0; i < 20; i++) {
-            System.out.println("");
-
-        }
-    }
-
 }

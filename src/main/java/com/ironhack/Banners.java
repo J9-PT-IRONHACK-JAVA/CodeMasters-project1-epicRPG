@@ -60,16 +60,16 @@ public class Banners {
     }
 
     public static void warriorWizard(){
-        String asciiArt = "       !\t\t" + "    /\\   /^\\\n" +
-                "      .-.\t\t" + "  //..\\\\  I\n" +
-                "    __|=|__\t\t" + "  \\].`[/  I\n" +
+        String asciiArt = "       !\t" + "    /\\   /^\\\n" +
+                "      .-.\t" + "  //..\\\\  I\n" +
+                "    __|=|__\t" + "  \\].`[/  I\n" +
                 "   (_/`-`\\_)\t" + "  /l\\/j\\  (]\n" +
                 "   //\\___/\\\\\t" + " /. ~~ ,\\/I\n" +
                 "   <>/   \\<>\t" + " \\\\L__j^\\/I\n" +
-                "    \\|_._|/\t\t" + "  \\/--v}  I\n" +
-                "     <_I_>\t\t" + "  |    |  I\n" +
-                "      |||\t\t" + "  |    l  I\n" +
-                "     /_|_\\\t\t" + "_/j  L l\\_!";
+                "    \\|_._|/\t" + "  \\/--v}  I\n" +
+                "     <_I_>\t" + "  |    |  I\n" +
+                "      |||\t" + "  |    l  I\n" +
+                "     /_|_\\\t" + "_/j  L l\\_!";
         System.out.println(asciiArt);
     }
 
