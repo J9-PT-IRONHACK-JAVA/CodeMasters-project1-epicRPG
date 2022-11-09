@@ -89,6 +89,7 @@ public abstract class Menu {
 
                 }
             }
+            
             Battle.battle(team1, team2, scanner, graveYard);
         }
     }
