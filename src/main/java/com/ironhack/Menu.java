@@ -17,8 +17,8 @@ public abstract class Menu {
             System.out.println("Welcome to EPIC RPG!");
             System.out.println("Select option:");
             System.out.println("1) Create manual characters.");
-            System.out.println("2) Chose between 3 random characters.");
-            System.out.println("3) Create random teams.");
+            System.out.println("2) Choose between 3 random characters.");
+            System.out.println("3) Create a random team.");
             System.out.println("4) Import CSV.");
             System.out.println("5) Exit.");
 
@@ -42,8 +42,7 @@ public abstract class Menu {
                     System.out.println("\nCreate Manual Characters....");
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
-                    CharacterCreator.generate(team1, team2);
-                    Battle.battle(team1, team2, scanner);
+                    CharacterCreator.menu(team1, team2);
                     break;
                 }
                 case 2: {
@@ -52,9 +51,9 @@ public abstract class Menu {
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
                     CharacterThreeRandom.generate(team1, team2);
-                    EpicUtils.loadingBar();
                     Battle.battle(team1,team2,scanner);
-                    return;
+                    System.in.read();
+                    break;
 
                 }
                 case 3: {
@@ -62,9 +61,13 @@ public abstract class Menu {
                     System.out.println("\nCreate a random teams.....");
                     System.out.println("Press ENTER to continue...");
                     RandomTeam.generate(team1,team2);
+                    var cemetery = Battle.battle(team1,team2,scanner);
+                    System.out.println("List of death characters:\n");
+                    Battle.printCemetery(cemetery);
+                    System.out.println("\nPress ENTER to continue...\n");
                     System.in.read();
-                    return;
 
+                    break;
                 }
                 case 4: {
                     EpicUtils.clearConsole();
@@ -80,7 +83,6 @@ public abstract class Menu {
                     System.out.println("--==EPIC RPG==--");
                     scanner.close();
                     System.exit(-1);
-
                 }
                 default: {
                     EpicUtils.clearConsole();

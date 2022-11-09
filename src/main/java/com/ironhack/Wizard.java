@@ -19,29 +19,47 @@ public class Wizard extends Character implements Attacker{
     }
 
     public void setMana(int mana) {
-        if (mana>=10){mana=10;}
-        else if (mana<=50){mana=50;}
-        else {mana= mana;} }
+        if (mana<=10){ // aca seria MENOR
+            this.mana=10; // Faltaba el this!!
+        } else if (mana>=50){ // aca seria MAYOR
+            this.mana=50; // Faltaba el this!
+        } else {
+            this.mana= mana; //faltaba el this
+        }
+    }
 
     @Override
     public void setHp(int hp) {
-       if (hp > 50){ super.setHp(50);}
-       else if (hp < 1){ super.setHp(1);}
-       else  {super.setHp(hp);} }
+       if (hp > 50){
+           super.setHp(50);
+       }else if (hp < 1){
+           super.setHp(0);
+           setAlive(false); // se agrega el SET ALIVE en FALSE
+       } else {
+           super.setHp(hp);
+       }
+    }
 
     public int getIntelligence() {
          return intelligence;
     }
 
     public void setIntelligence(int intelligence) {
-        if (intelligence>=1){intelligence=1;}
-        else if (intelligence<=50){intelligence=50;}
-        else {intelligence= intelligence;} }
+        if (intelligence<=1){ // aca seria MENOR
+            this.intelligence=1; //faltaba el this
+        }
+        else if (intelligence>50){// aca seria MAYOR
+            this.intelligence=50; // faltaba el this
+        }
+        else {
+            this.intelligence= intelligence; // faltaba el this
+        }
+    }
 
     @Override
     public int attack() {
         int damage = intelligence;
-        if (damage>=5){
+        if (mana>=5){ // aca modifico el damage por el mana (verifica si tiene mas de 5 de mana)
            //fireball
            mana = mana-5;}
         else {

@@ -9,9 +9,10 @@ public class Warrior extends Character implements Attacker{
     @Override
     public void setHp(int hp) {
         if (hp>200){
-            super.setHp(100);
-        }else if (hp<100){
+            super.setHp(200);
+        }else if (hp<1){
             super.setHp(0); //HP Minimo 0
+            setAlive(false);
         }
         else{
             super.setHp(hp);
