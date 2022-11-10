@@ -59,6 +59,7 @@ public abstract class Menu {
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
                     RandomTeam.generate(team1, team2);
+                    Csv.saveToCsv(team1,team2);
                     break;
                 }
                 case 4: {

@@ -5,6 +5,14 @@ public class Wizard extends Character implements Attacker{
     private int mana;
     private int intelligence;
 
+    public String toCsv() {
+        return "WI,"
+                +getName() + ","
+                +getHp() + ","
+                +getMana() + ","
+                +getIntelligence()+"\n";
+    }
+
     //Constructor
 
     public Wizard(int id, String name, int hp, int mana, int intelligence) {

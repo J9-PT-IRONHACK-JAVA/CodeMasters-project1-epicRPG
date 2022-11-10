@@ -5,6 +5,14 @@ public class Warrior extends Character implements Attacker{
     private int stamina;
     private int strength;
 
+    public String toCsv() {
+        return "WA,"
+                +getName() + ","
+                +getHp() + ","
+                +getStamina() + ","
+                +getStrength()+"\n";
+    }
+
     // OVERRIDE - Set HP (Limits 1-100)
     @Override
     public void setHp(int hp) {
