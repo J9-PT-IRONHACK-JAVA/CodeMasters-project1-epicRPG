@@ -23,7 +23,7 @@ public abstract class Menu {
             System.out.println("5) Exit.");
 
             try{
-                option = Integer.parseInt(scanner.nextLine());
+                option = Integer.parseInt(scanner.next());
             }
             catch (Exception e){
                 option = 0;
