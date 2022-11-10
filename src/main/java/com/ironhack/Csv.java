@@ -46,6 +46,7 @@ public class Csv {
 
     }
 
+        // DESDE AQUI EL SAVE TO CSV!
     public static void saveToCsv(ArrayList<Character> team1,ArrayList<Character> team2) throws IOException {
 
         var fileWritterTeam1 = new FileWriter("team1.csv",true);

@@ -5,6 +5,7 @@ public class Wizard extends Character implements Attacker{
     private int mana;
     private int intelligence;
 
+    // NUEVO METODO PARA GUARDAR EN CSV
     public String toCsv() {
         return "WI,"
                 +getName() + ","

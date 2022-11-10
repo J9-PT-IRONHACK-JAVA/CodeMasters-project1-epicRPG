@@ -5,6 +5,7 @@ public class Warrior extends Character implements Attacker{
     private int stamina;
     private int strength;
 
+    // NUEVO METODO PARA GUARDAR EN CSV
     public String toCsv() {
         return "WA,"
                 +getName() + ","
