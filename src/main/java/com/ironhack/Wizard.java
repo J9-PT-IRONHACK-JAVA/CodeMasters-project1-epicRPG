@@ -30,9 +30,10 @@ public class Wizard extends Character implements Attacker{
 
     @Override
     public void setHp(int hp) {
-       if (hp > 50){
-           super.setHp(50);
-       }else if (hp < 1){
+       if (hp > 100){
+           super.setHp(100);
+       }
+       else if (hp < 1){
            super.setHp(0);
            setAlive(false); // se agrega el SET ALIVE en FALSE
        } else {
