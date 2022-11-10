@@ -49,4 +49,12 @@ public abstract class Character {
     public void setAlive(boolean alive) {
         if (isAlive && !alive) {isAlive = alive;}
     }
+
+    public void receiveAttack(int damage){
+        hp=(getHp()-damage);
+        if (getHp()<1){
+            setAlive(false);
+        }
+    }
+
 }

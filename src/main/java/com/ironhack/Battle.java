@@ -21,11 +21,11 @@ public class Battle {
             System.out.println("TEAM 2:");
             listCharacters(team2);
             System.out.println("************");
-            System.out.println("Press ENTER to start battle!");
+            System.out.println("Press ENTER to start the war!");
             System.in.read();
             EpicUtils.clearConsole();
 
-            while (sumHp(team1) != 0 && sumHp(team2) != 0){
+            while (sumHp(team1) > 0 && sumHp(team2) > 0){
                 EpicUtils.clearConsole();
                 System.out.println("Team 1 select character:");
                 listCharacters(team1);
@@ -39,14 +39,14 @@ public class Battle {
                 var figther2=team2.get(op2-1);
 
                 // While los 2 hps sean mayor a 0
-                while (figther1.getHp() != 0 && figther2.getHp() != 0){
+                while (figther1.getHp() > 0 && figther2.getHp() > 0){
                     EpicUtils.clearConsole();
                     System.out.println("Round Nº: "+round);
                     listCharacters(new ArrayList<>(List.of(figther1)));
                     System.out.println("VS");
                     listCharacters(new ArrayList<>(List.of(figther2)));
 
-                    System.out.println("Press enter to continue...");
+                    System.out.println("Press enter to battle...");
                     System.in.read();
 
                     figth(figther1,figther2);
@@ -74,7 +74,7 @@ public class Battle {
                 }
             }
         }
-        System.out.println("**** END OF BATTLE ****");
+        System.out.println("**** END OF WAR ****");
         System.out.println("Press ENTER to continue.");
         System.in.read();
     }
@@ -118,8 +118,8 @@ public class Battle {
     }
 
     public static void figth(Character char1, Character char2){
-        char1.setHp(char1.getHp()-((Attacker) char2).attack());
-        char2.setHp(char2.getHp()-((Attacker) char1).attack());
+        char1.receiveAttack(((Attacker)char2).attack());
+        char2.receiveAttack(((Attacker)char1).attack());
     }
     public static void printCemetery(ArrayList<Character> team){
         Character character;
