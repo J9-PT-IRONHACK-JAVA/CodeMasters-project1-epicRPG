@@ -2,6 +2,8 @@ package com.ironhack;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -41,6 +43,36 @@ public class Csv {
         } catch (Exception e) {
             System.out.println("Error... Verify CSV file Format...");
         }
+
+    }
+
+        // DESDE AQUI EL SAVE TO CSV!
+    public static void saveToCsv(ArrayList<Character> team1,ArrayList<Character> team2) throws IOException {
+
+        var fileWritterTeam1 = new FileWriter("team1.csv",true);
+        var fileWritterTeam2 = new FileWriter("team2.csv",true);
+        fileWritterTeam1.write("-== TEAM 1 ==-\n");
+        fileWritterTeam2.write("-== TEAM 2 ==-\n");
+
+
+        for (int i = 0; i < team1.size(); i++) {
+            var character = team1.get(i);
+            if(character instanceof Warrior){
+                fileWritterTeam1.write(((Warrior)character).toCsv());
+            }else{
+                fileWritterTeam1.write(((Wizard)character).toCsv());
+            }
+        }
+        for (int i = 0; i < team2.size(); i++) {
+            var character = team2.get(i);
+            if(character instanceof Warrior){
+                fileWritterTeam2.write(((Warrior)character).toCsv());
+            }else{
+                fileWritterTeam2.write(((Wizard)character).toCsv());
+            }
+        }
+        fileWritterTeam1.close();
+        fileWritterTeam2.close();
 
     }
 
