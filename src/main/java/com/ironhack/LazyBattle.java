@@ -111,28 +111,7 @@ public interface LazyBattle{
     }
 
     public static void figth(Character char1, Character char2){
-        char1.setHp(char1.getHp()-((Attacker) char2).attack());
-        char2.setHp(char2.getHp()-((Attacker) char1).attack());
-    }
-    public static void printCemetery(ArrayList<Character> team){
-        Character character;
-        for (int i = 0; i < team.size(); i++) {
-            character = team.get(i);
-            if (character instanceof Warrior) {
-                String warrior =
-                        (i + 1) + ") † " +
-                                "Warrior - " +
-                                character.getName() + " - " +
-                                "From team Nº: " + character.getHp();
-                System.out.println(warrior);
-            } else {
-                String wizard =
-                        (i + 1) + ") † " +
-                                "Wizard - " +
-                                character.getName() + " - " +
-                                "From team Nº: " + character.getHp();
-                System.out.println(wizard);
-            }
-        }
+        char1.receiveAttack(((Attacker)char2).attack());
+        char2.receiveAttack(((Attacker)char1).attack());
     }
 }
