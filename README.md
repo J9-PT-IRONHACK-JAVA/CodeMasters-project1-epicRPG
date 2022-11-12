@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/86268267/201467558-7bfb6e5d-cb0d-4ce4-a2da-846be7bd9f94.png)<br /><br /><br /><br />
 
-## Jugavilidad
+## Jugabilidad
 `java -jar epicRPG.jar` para poder ejecutar el juego.<br /><br />
 Al ejecutar el juego, aparece la pantalla principal y acto seguido el menu de selección.<br />
 Entre todas esas opcion, se encuentran varias formas de creacion de personajes.<br />
@@ -31,3 +31,16 @@ Si te ha gustado cualquiera de los dos equipos podras reutilizarlo importando el
 ### Print the graveyard
 Creeme, no vas a querer ver a tus jugadores aparecer por aquí...<br />
 Una vez la batalla haya terminado y vuelvas al menú, tendras la opcion de ver por pantalla todos los soldados caídos.
+
+## Batalla!!
+Ya tienes los equipos preparados y listos para el combate, ahora viene la acción...<br />
+Primero deberás escoger entre hacer la batalla tu mismo o simulada.
+
+### Normal Battle
+Vas a escoger uno de los personajes de cada equipo y viendo ronda por ronda como avanza la batalla, hasta el momento que uno de los dos caiga.<br />
+Cuando uno de los dos muera, se irá al Graveyard y tendrás la opcion de volvera a escoger un personaje de cada equipo.<br />
+Así avanzara el combate hasta que uno de los dos equpos se quede sin personajes disponibles, ahí se sabrá quien es el vencedor!
+
+### Simulated Battle
+Tendrás que escoger de cada equipo quieres que peleen, entonces el juego se desarrollará de forma automática hasta que uno de los dos caiga.<br />
+Cada vez que un personaje muera, volverás a ecoger un personaje por equipo. Quien será el vencedor!?
