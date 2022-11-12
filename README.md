@@ -1,4 +1,4 @@
-# CodeMasters-project1-epicRPG
+# CodeMasters - epicRPG
 
 ![image](https://user-images.githubusercontent.com/86268267/201467558-7bfb6e5d-cb0d-4ce4-a2da-846be7bd9f94.png)<br /><br /><br /><br />
 
