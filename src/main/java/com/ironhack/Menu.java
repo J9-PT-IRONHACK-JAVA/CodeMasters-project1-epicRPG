@@ -44,6 +44,7 @@ public abstract class Menu {
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
                     CharacterCreator.generate(team1, team2);
+                    Csv.saveToCsv(team1,team2);
                     break;
                 }
                 case 2: {
@@ -52,6 +53,7 @@ public abstract class Menu {
                     System.out.println("Press ENTER to continue...");
                     System.in.read();
                     CharacterThreeRandom.generate(team1, team2);
+                    Csv.saveToCsv(team1,team2);
                     break;
                 }
                 case 3: {
@@ -97,7 +99,23 @@ public abstract class Menu {
                 }
             }
             if (option == 1 | option == 2 | option == 3 | option == 4) {
-                Battle.battle(team1, team2, scanner, graveYard);
+                int chose;
+
+                EpicUtils.clearConsole();
+                System.out.println("1) Normal battle.");
+                System.out.println("2) Simulated battle.");
+                do {
+                    try {
+                        chose = Integer.parseInt(scanner.next());
+                    } catch (Exception e) {
+                        chose = 0;
+                    }
+                } while (chose != 1 && chose != 2);
+                if (chose == 1) {
+                    Battle.battle(team1, team2, scanner, graveYard);
+                } else {
+                    LazyBattle.lazyBattle(team1, team2, scanner, graveYard);
+                }
             }
         }
     }

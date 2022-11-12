@@ -5,20 +5,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public interface LazyBattle{
+public class LazyBattle{
 
     public static void lazyBattle (ArrayList<Character> team1, ArrayList<Character> team2, Scanner scanner, ArrayList<Character> graveYard) throws InterruptedException, IOException {
 
         int op1;
         int op2;
 
+
         EpicUtils.loadingBar();
+        Banners.swords();
         System.out.println("Start LazyBattle!");
         System.out.println("Press ENTER to start battle!");
-        //System.in.read();
+        System.in.read();
         EpicUtils.clearConsole();
 
-        while (sumHp(team1) != 0 && sumHp(team2) != 0){
+        while (sumHp(team1) > 0 && sumHp(team2) > 0){
             EpicUtils.clearConsole();
             System.out.println("Team 1 select character:");
             listCharacters(team1);
@@ -32,9 +34,9 @@ public interface LazyBattle{
             var figther2=team2.get(op2-1);
 
             // While los 2 hps sean mayor a 0
-            while (figther1.getHp() != 0 && figther2.getHp() != 0){
+            while (figther1.getHp() > 0 && figther2.getHp() > 0){
                 EpicUtils.clearConsole();
-                System.out.println("Round Nº: "+round);
+                System.out.println("Round Nº: " + round);
                 listCharacters(new ArrayList<>(List.of(figther1)));
                 System.out.println("VS");
                 listCharacters(new ArrayList<>(List.of(figther2)));
@@ -44,7 +46,7 @@ public interface LazyBattle{
                 figth(figther1,figther2);
 
                 round+=1;
-                Thread.sleep(1200);
+                Thread.sleep(250);
             }
             System.out.println("End of Battle...");
 
@@ -80,7 +82,7 @@ public interface LazyBattle{
             if (team.get(i).isAlive()==true) {
                 if (character instanceof Warrior) {
                     String warrior =
-                            (i + 1) + ") - " +
+                            (character.getId() + 1) + ") - " +
                                     "Warrior - " +
                                     character.getName() + " - " +
                                     "HP: " + character.getHp() + " - " +
@@ -90,7 +92,7 @@ public interface LazyBattle{
                     System.out.println(warrior);
                 } else {
                     String wizard =
-                            (i + 1) + ") - " +
+                            (character.getId() + 1) + ") - " +
                                     "Wizard - " +
                                     character.getName() + " - " +
                                     "HP: " + character.getHp() + " - " +
