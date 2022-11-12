@@ -12,6 +12,7 @@ public class Battle {
         int op2;
 
         EpicUtils.loadingBar();
+        Banners.swords();
         if (team1.size()!=team2.size()){
             System.out.println("Team number of Characters of teams must be equal");
         }else{
@@ -74,13 +75,14 @@ public class Battle {
                         graveYard.add(new Wizard(round, figther2.getName(), 2,((Wizard) figther2).getMana(),((Wizard) figther2).getIntelligence()));
                     }
                 }
-                Thread.sleep(1500);
+                System.out.println("Press ENTER to continue.");
+                System.in.read();
             }
         }
         System.out.println("\n \u001B[43m**** END OF WAR ****\u001B[0m");
-        if(sumHp(team1)>0){
+        if(sumHp(team1) > 0){
             System.out.println("\n \u001B[31m-== TEAM 1 WIN ==-\u001B[0m");
-        }else if(sumHp(team2)>0){
+        }else if(sumHp(team2) > 0){
             System.out.println("\n \u001B[31m-== TEAM 2 WIN ==-\u001B[0m");
         }else{
             System.out.println("\n \u001B[31m-== TIE ==-\u001B[0m");
@@ -88,6 +90,8 @@ public class Battle {
 
         System.out.println("Press ENTER to continue.");
         System.in.read();
+        team1.clear();
+        team2.clear();
     }
 
 
@@ -137,8 +141,14 @@ public class Battle {
         char1.receiveAttack(((Attacker)char2).attack());
         char2.receiveAttack(((Attacker)char1).attack());
     }
-    public static void printCemetery(ArrayList<Character> team){
+    public static void printCemetery(ArrayList<Character> team) throws InterruptedException, IOException {
         Character character;
+        if (team.isEmpty()) {
+            System.out.println("Graveyard is empty... yet.");
+            Thread.sleep(3000);
+            return;
+        }
+        Banners.graveyard();
         for (int i = 0; i < team.size(); i++) {
             character = team.get(i);
             if (character instanceof Warrior) {
@@ -157,5 +167,7 @@ public class Battle {
                 System.out.println(wizard);
             }
         }
+        System.out.println("\nPress ENTER to continue...");
+        System.in.read();
     }
 }

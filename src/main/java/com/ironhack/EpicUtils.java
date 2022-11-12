@@ -34,9 +34,9 @@ public class EpicUtils {
             percentage += 5;
             System.out.print(bar + "|");
             bar += "|";
-            Thread.sleep(1);
+            Thread.sleep(200);
         }
-
         System.out.println("]");
+        clearConsole();
     }
 }

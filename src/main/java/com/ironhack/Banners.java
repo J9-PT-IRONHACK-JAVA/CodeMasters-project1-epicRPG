@@ -41,7 +41,7 @@ public class Banners {
                 "    \\|_._|/\n" +
                 "     <_I_>\n" +
                 "      |||\n" +
-                "     /_|_\\";
+                "     /_|_\\\n";
         System.out.println(asciiArt);
     }
 
@@ -55,7 +55,7 @@ public class Banners {
                 "  \\/--v}  I\n" +
                 "  |    |  I\n" +
                 "  |    l  I\n" +
-                "_/j  L l\\_!";
+                "_/j  L l\\_!\n";
         System.out.println(asciiArt);
     }
 
@@ -89,6 +89,15 @@ public class Banners {
                 "⠀⠀⢀⣴⣾⠋⠀⠀⠀⠀⠀⠙⢿⡿⠂⠐⢿⡿⠋⠀⠀⠀⠀⠀⠙⣷⣦⡀⠀⠀\n" +
                 "⠀⠸⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⠇⠀\n" +
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+        System.out.println(asciiArt);
+    }
+
+    public static void graveyard() {
+        String asciiArt = "      ,-=-.         ,-=-.         ,-=-.         ,-=-.    \n" +
+                "     /  +  \\       /  +  \\       /  +  \\       /  +  \\    \n" +
+                "     | ~~~ |       | ~~~ |       | ~~~ |       | ~~~ |   \n" +
+                "     |R.I.P|       |R.I.P|       |R.I.P|       |R.I.P|   \n" +
+                "\\vV,,|_____|V,\\vV,,|_____|V,\\vV,,|_____|V,\\vV,,|_____|V,\n\n";
         System.out.println(asciiArt);
     }
 }
