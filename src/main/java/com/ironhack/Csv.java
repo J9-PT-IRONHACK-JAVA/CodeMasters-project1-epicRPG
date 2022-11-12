@@ -43,14 +43,13 @@ public class Csv {
         } catch (Exception e) {
             System.out.println("Error... Verify CSV file Format...");
         }
-
     }
 
         // DESDE AQUI EL SAVE TO CSV!
     public static void saveToCsv(ArrayList<Character> team1,ArrayList<Character> team2) throws IOException {
 
-        var fileWritterTeam1 = new FileWriter("team1.csv",true);
-        var fileWritterTeam2 = new FileWriter("team2.csv",true);
+        var fileWritterTeam1 = new FileWriter("team1.csv");
+        var fileWritterTeam2 = new FileWriter("team2.csv");
         fileWritterTeam1.write("-== TEAM 1 ==-\n");
         fileWritterTeam2.write("-== TEAM 2 ==-\n");
 
@@ -73,8 +72,5 @@ public class Csv {
         }
         fileWritterTeam1.close();
         fileWritterTeam2.close();
-
     }
-
-
 }
