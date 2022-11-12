@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/86268267/201467558-7bfb6e5d-cb0d-4ce4-a2da-846be7bd9f94.png)<br /><br /><br /><br />
 
-## Jugabilidad
+# Jugabilidad
 `java -jar epicRPG.jar` para poder ejecutar el juego.<br /><br />
 Al ejecutar el juego, aparece la pantalla principal y acto seguido el menu de selección.<br />
 Entre todas esas opcion, se encuentran varias formas de creacion de personajes.<br />
@@ -32,7 +32,7 @@ Si te ha gustado cualquiera de los dos equipos podras reutilizarlo importando el
 Creeme, no vas a querer ver a tus jugadores aparecer por aquí...<br />
 Una vez la batalla haya terminado y vuelvas al menú, tendras la opcion de ver por pantalla todos los soldados caídos.
 
-## Batalla!!
+# Batalla!!
 Ya tienes los equipos preparados y listos para el combate, ahora viene la acción...<br />
 Primero deberás escoger entre hacer la batalla tu mismo o simulada.
 
