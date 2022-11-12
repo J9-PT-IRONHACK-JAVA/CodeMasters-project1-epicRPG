@@ -14,10 +14,18 @@ public class CharacterThreeRandom {
         var scan = new Scanner(System.in);
         var faker = new Faker();
 
-        System.out.println("How many characters do you want for each team:");
-        characters = scan.nextInt();
-        scan.nextLine();
-        System.out.println("\nNICE! You are going to fight "+characters+" vs "+characters+"\n");
+        System.out.println("How many characters do you want for each team (MAX 10):");
+        do {
+            try {
+                characters = Integer.parseInt(scan.nextLine());
+            } catch (Exception e) {
+                characters = 0;
+            }
+            if (characters < 1 || characters > 10){
+                System.out.println("Wrong input!");
+            }
+        } while (characters < 1 || characters > 20);
+        System.out.println("\nNICE! You are going to fight " + characters + " vs " + characters + "\n");
         
         //CREATE TEAM 1
         System.out.println("TIME TO SET THE TEAM 1:");
@@ -44,9 +52,13 @@ public class CharacterThreeRandom {
                     System.out.println("Bad input! Write 1 or 2 and press intro.");
                 }
                 if (character == 1) {
+                    EpicUtils.clearConsole();
+                    Banners.warrior();
                     threeRandomWarriors(scan, team, i, faker);
                     break;
                 } else if (character == 2){
+                    EpicUtils.clearConsole();
+                    Banners.wizard();
                     threeRandomWizards(scan, team, i, faker);
                     break;
                 }

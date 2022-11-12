@@ -12,7 +12,7 @@ public abstract class Menu {
 
         int option =0;
 
-        while (option!=5){
+        while (option!=6){
             EpicUtils.clearConsole();
             System.out.println("Welcome to EPIC RPG!");
             System.out.println("Select option:");
@@ -20,7 +20,8 @@ public abstract class Menu {
             System.out.println("2) Choose between 3 random characters.");
             System.out.println("3) Create a random team.");
             System.out.println("4) Import CSV.");
-            System.out.println("5) Exit.");
+            System.out.println("5) Print the graveyard.");
+            System.out.println("6) Exit.");
 
             try{
                 option = Integer.parseInt(scanner.next());
@@ -73,12 +74,17 @@ public abstract class Menu {
                     Csv.menuCsv(scanner, team2);
                     break;
                 }
-                case -1: {
+                case 5: {
+                    EpicUtils.clearConsole();
+                    Battle.printCemetery(graveYard);
+                    break;
+                }
+                case 6: {
                     EpicUtils.clearConsole();
                     System.out.println("Thanks for play!");
                     System.out.println("--==EPIC RPG==--");
                     scanner.close();
-                    System.exit(-1);
+                    System.exit(0);
                 }
                 default: {
                     EpicUtils.clearConsole();
@@ -90,8 +96,9 @@ public abstract class Menu {
 
                 }
             }
-            
-            Battle.battle(team1, team2, scanner, graveYard);
+            if (option == 1 | option == 2 | option == 3 | option == 4) {
+                Battle.battle(team1, team2, scanner, graveYard);
+            }
         }
     }
 }
