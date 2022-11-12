@@ -155,15 +155,15 @@ public class Battle {
                 String warrior =
                                 (i + 1) + ") † " +
                                 "Warrior - " +
-                                character.getName() + " - " +
-                                "From team Nº: " + character.getHp();
+                                character.getName();// + " - " +
+                                //"From team Nº: " + character.getHp();
                 System.out.println(warrior);
             } else {
                 String wizard =
                                 (i + 1) + ") † " +
                                 "Wizard - " +
-                                character.getName() + " - " +
-                                "From team Nº: " + character.getHp();
+                                character.getName(); // + " - " +
+                                //"From team Nº: " + character.getHp();
                 System.out.println(wizard);
             }
         }
