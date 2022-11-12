@@ -17,6 +17,5 @@ public class Main {
         System.out.println("Press ENTER to start...");
         System.in.read();
         Menu.run(team1, team2, graveYard);
-        Battle.printCemetery(graveYard);
     }
 }

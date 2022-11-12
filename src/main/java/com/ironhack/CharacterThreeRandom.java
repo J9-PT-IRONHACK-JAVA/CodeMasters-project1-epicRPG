@@ -14,10 +14,18 @@ public class CharacterThreeRandom {
         var scan = new Scanner(System.in);
         var faker = new Faker();
 
-        System.out.println("How many characters do you want for each team:");
-        characters = scan.nextInt();
-        scan.nextLine();
-        System.out.println("\nNICE! You are going to fight "+characters+" vs "+characters+"\n");
+        System.out.println("How many characters do you want for each team (MAX 10):");
+        do {
+            try {
+                characters = Integer.parseInt(scan.nextLine());
+            } catch (Exception e) {
+                characters = 0;
+            }
+            if (characters < 1 || characters > 10){
+                System.out.println("Wrong input!");
+            }
+        } while (characters < 1 || characters > 20);
+        System.out.println("\nNICE! You are going to fight " + characters + " vs " + characters + "\n");
         
         //CREATE TEAM 1
         System.out.println("TIME TO SET THE TEAM 1:");
@@ -36,17 +44,21 @@ public class CharacterThreeRandom {
             Banners.warriorWizard();
             System.out.println(" 1. Warrior or 2. Wizard?");
             character = 0;
+            // CHOSE WARRIOR OR WIZARD
             while (character != 1 || character != 2) {
                 character = scan.nextInt();
                 scan.nextLine();
                 if (character != 1 && character != 2){
                     System.out.println("Bad input! Write 1 or 2 and press intro.");
                 }
-                //CHOSE WARRIOR OR WIZARD
                 if (character == 1) {
+                    EpicUtils.clearConsole();
+                    Banners.warrior();
                     threeRandomWarriors(scan, team, i, faker);
                     break;
                 } else if (character == 2){
+                    EpicUtils.clearConsole();
+                    Banners.wizard();
                     threeRandomWizards(scan, team, i, faker);
                     break;
                 }
@@ -84,7 +96,22 @@ public class CharacterThreeRandom {
         System.out.printf("%-15s %-15s %-15s %-15s\n", "Strength:", strength1, strength2, strength3);
         System.out.printf("%-15s %-15s %-15s %-15s\n", "HP:", hp1, hp2, hp3);
         System.out.println("\nName of your chosen warrior:");
-        selectRandom(scan, team, i, selected, name1, name2, name3, stamina1, stamina2, stamina3, strength1, strength2, strength3, hp1, hp2, hp3);
+        while (!selected.equals(name1) || !selected.equals(name2) || !selected.equals(name3)){
+            selected = scan.nextLine();
+            if (!selected.equals(name1) && !selected.equals(name2) && !selected.equals(name3)){
+                System.out.println("Wrong name!");
+            }
+            if (selected.equals(name1)){
+                team.add(new Warrior(i, name1, hp1, stamina1, strength1));
+                break;
+            } else if (selected.equals(name2)){
+                team.add(new Warrior(i, name2, hp2, stamina2, strength2));
+                break;
+            } else if (selected.equals(name3)) {
+                team.add(new Warrior(i, name3, hp3, stamina3, strength3));
+                break;
+            }
+        }
     }
 
     public static void threeRandomWizards(Scanner scan, ArrayList<Character> team, int i, Faker faker){
@@ -117,41 +144,37 @@ public class CharacterThreeRandom {
         System.out.printf("%-15s %-15s %-15s %-15s\n", "Intelligence:", intelligence1, intelligence2, intelligence3);
         System.out.printf("%-15s %-15s %-15s %-15s\n", "HP:", hp1, hp2, hp3);
         System.out.println("\nName of your chosen wizard:");
-        selectRandom(scan, team, i, selected, name1, name2, name3, mana1, mana2, mana3, intelligence1, intelligence2, intelligence3, hp1, hp2, hp3);
-    }
-
-    private static void selectRandom(Scanner scan, ArrayList<Character> team, int i, String selected, String name1, String name2, String name3, int manaSta1, int manaSta2, int manaSta3, int intelStr1, int intelStr2, int intelStr3, int hp1, int hp2, int hp3) {
         while (!selected.equals(name1) || !selected.equals(name2) || !selected.equals(name3)){
             selected = scan.nextLine();
             if (!selected.equals(name1) && !selected.equals(name2) && !selected.equals(name3)){
                 System.out.println("Wrong name!");
             }
             if (selected.equals(name1)){
-                team.add(new Wizard(i, name1, hp1, manaSta1, intelStr1));
+                team.add(new Wizard(i, name1, hp1, mana1, intelligence1));
                 break;
             } else if (selected.equals(name2)){
-                team.add(new Wizard(i, name2, hp2, manaSta2, intelStr2));
+                team.add(new Wizard(i, name2, hp2, mana2, intelligence2));
                 break;
             } else if (selected.equals(name3)) {
-                team.add(new Wizard(i, name3, hp3, manaSta3, intelStr3));
+                team.add(new Wizard(i, name3, hp3, mana3, intelligence3));
                 break;
             }
         }
     }
 
     private static String randomWarriorName(Faker faker) {
-        String name1 = faker.witcher().monster();
-        if (name1.indexOf(" ") != -1) {
-            name1 = name1.substring(0, name1.indexOf(" "));
+        String name = faker.witcher().monster();
+        if (name.indexOf(" ") != -1) {
+            name = name.substring(0, name.indexOf(" "));
         }
-        return name1;
+        return name;
     }
 
     private static String randomWizardName(Faker faker) {
-        String name1 = faker.witcher().witcher();
-        if (name1.indexOf(" ") != -1) {
-            name1 = name1.substring(0, name1.indexOf(" "));
+        String name = faker.witcher().witcher();
+        if (name.indexOf(" ") != -1) {
+            name = name.substring(0, name.indexOf(" "));
         }
-        return name1;
+        return name;
     }
 }

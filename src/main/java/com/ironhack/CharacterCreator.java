@@ -8,19 +8,18 @@ public class CharacterCreator {
 
     public static void generate(ArrayList<Character> team1, ArrayList<Character> team2) throws InterruptedException, IOException {
 
-        int character = 0;
         int characters;
 
         var scan = new Scanner(System.in);
 
-        System.out.println("How many characters do you want for each team:");
+        System.out.println("How many characters do you want for each team (MAX 10):");
         do {
             try {
                 characters = Integer.parseInt(scan.nextLine());
             } catch (Exception e) {
                 characters = 0;
             }
-            if (characters < 1 || characters > 20){
+            if (characters < 1 || characters > 10){
                 System.out.println("Wrong input!");
             }
         } while (characters < 1 || characters > 20);
@@ -28,6 +27,16 @@ public class CharacterCreator {
         System.out.println("TIME TO SET THE TEAM 1:");
         System.out.println("\nPress ENTER to continue...");
         System.in.read();
+        temCreator(characters, scan, team1);
+        EpicUtils.clearConsole();
+        System.out.println("IME TO SET THE TEAM 2:");
+        System.out.println("\nPress ENTER to continue...");
+        System.in.read();
+        temCreator(characters, scan, team2);
+    }
+
+    private static void temCreator(int characters, Scanner scan, ArrayList<Character> team1) {
+        int character = 0;
         for (int i = 0; i < characters; i++) {
             EpicUtils.clearConsole();
             System.out.println("CHARACTER " + (i+1) + "\n");
@@ -41,33 +50,14 @@ public class CharacterCreator {
                     System.out.println("Bad input! Write 1 or 2 and press intro.");
                 }
                 if (character == 1) {
+                    EpicUtils.clearConsole();
+                    Banners.warrior();
                     warriorCreator(scan, team1, i);
                     break;
                 } else if (character == 2){
+                    EpicUtils.clearConsole();
+                    Banners.wizard();
                     wizardCreator(scan, team1, i);
-                    break;
-                }
-            }
-        }
-        EpicUtils.clearConsole();
-        System.out.println("IME TO SET THE TEAM 2:");
-        for (int i = 0; i < characters; i++) {
-            EpicUtils.clearConsole();
-            System.out.println("CHARACTER " + (i+1) + "\n");
-            Banners.warriorWizard();
-            System.out.println(" 1. Warrior or 2. Wizard?");
-            character = 0;
-            while (character != 1 || character != 2) {
-                character = scan.nextInt();
-                scan.nextLine();
-                if (character != 1 && character != 2){
-                    System.out.println("Bad input!");
-                }
-                if (character == 1) {
-                    warriorCreator(scan, team2, i);
-                    break;
-                } else if (character == 2){
-                    wizardCreator(scan, team2, i);
                     break;
                 }
             }
